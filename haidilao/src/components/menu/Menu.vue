@@ -10,13 +10,9 @@
     <section id="banWeChat">
       <div class="cate_Classification">
         <ul>
-          <li class="active" @click="jump" data-index=0>锅底</li>
-          <li @click="jump" data-index=1>招牌十捞</li>
-          <li @click="jump" data-index=2>荤菜</li>
-          <li @click="jump" data-index=3>素菜</li>
-          <li @click="jump" data-index=4>小吃</li>
-          <li @click="jump" data-index=5>饮料酒水</li>
-          <li @click="jump" data-index=6>小料</li>
+          <li v-for="(item,index) in classiflylist" @click="jump" :data-index='index' :class="[index==0 ? 'active':'']">
+            {{item.name}}
+          </li>
         </ul>
       </div>
       <div class="cate_listmenu">
@@ -31,7 +27,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" @click.prevent="ballAnimatie" :data-id="item._id">+</i>
-                <i class="iconfont" :data-id="item._id">-</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
             <div class="ball">
@@ -50,6 +47,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -65,6 +64,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -80,6 +81,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -95,6 +98,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -110,6 +115,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -125,6 +132,8 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" :data-id="item._id">+</i>
+                <i class="num" :data-id="item._id">{{item.num ? item.num : '0'}}</i>
+                <i :class="[item.num ? 'iconfont del-show': 'iconfont del']" @click="delShop" :data-id="item._id">-</i>
               </div>
             </div>
           </li>
@@ -147,6 +156,7 @@
     data() {
       return {
         classifly: [],
+        classiflylist: [],
         base: [],
         features: [],
         meat: [],
@@ -177,6 +187,7 @@
       })
         .then(async (res) => {
           cate = await res.data.result
+          this.classiflylist = cate
           for (let item of cate) {
             this.classifly.push(item._id)
           }
@@ -195,10 +206,11 @@
                   shopnum += item.num
                 }
                 shopNum.text(shopnum)
-                for (let item of data) {
+                for (let [index, item] of data.entries()) {
                   for (let tag of shopCart) {
                     if (item._id === tag.id) {
                       money += tag.num * item.price
+                      data[index].num = tag.num
                     }
                   }
                 }
@@ -318,29 +330,48 @@
         let
           shopCart = [],
           tag = jq(e.target),
-          id = tag.attr('data-id'),
+          father = tag.parent(),
           num = 0,
           shopNum = jq('.footer_cart_ico p'),
           shopnum = 0,
           money = 0,
-          allMoney = jq('.allMoney')
+          Index = 0,
+          flag = false,
+          allMoney = jq('.allMoney'),
+          shopCount = father.children('.num'),
+          delbtn = father.children('.del')
+        delbtn.css('opacity', '1')
         if (this.$session.get('shopCart')) {
           shopCart = this.$session.get('shopCart')
           for (let [index, item] of shopCart.entries()) {
-            if (item.id === id) {
-              shopCart[index].num++
-              this.$session.set('shopCart', shopCart)
+            if (item.id === tag.attr('data-id')) {
+              Index = index
+              /*shopCart[index].num++
+              this.$session.set('shopCart', shopCart)*/
+              flag = true
               break
             }
-            else {
+            /*else {
               num++
-              shopCart.push({id: id, num: num})
+              shopCart.push({id: tag.attr('data-id'), num: num})
               this.$session.set('shopCart', shopCart)
               break
-            }
+            }*/
+          }
+          if (flag) {
+            shopCart[Index].num++
+            this.$session.set('shopCart', shopCart)
+          }
+          else {
+            num++
+            shopCart.push({id: tag.attr('data-id'), num: num})
+            this.$session.set('shopCart', shopCart)
           }
           for (let item of shopCart) {
             shopnum += item.num
+            if (item.id === shopCount.attr('data-id')) {
+              shopCount.text(item.num)
+            }
           }
           shopNum.text(shopnum)
           for (let item of this.all) {
@@ -355,10 +386,11 @@
         }
         else {
           num++
-          shopCart.push({id: id, num: num})
+          shopCart.push({id: tag.attr('data-id'), num: num})
           shopNum.text(num)
+          shopCount.text(num)
           for (let item of this.all) {
-            if (item._id === id) {
+            if (item._id === tag.attr('data-id')) {
               money += num * item.price
               break
             }
@@ -381,7 +413,7 @@
         list.removeClass('active')
         list.eq(index).addClass('active')
         if (index > 0) {
-          listmenu.scrollTop(getHei(ullist, index) + ullist.eq(0).innerHeight())
+          listmenu.scrollTop(getHei(ullist, index) + 200)
         }
         else {
           listmenu.scrollTop(0)
@@ -401,8 +433,39 @@
           //ball.css('display', 'none')
           ball.removeClass('ballmove')
           ballInner.removeClass('ball-innermove')
-        }, 2000)
+        }, 500)
 
+      },
+      delShop(e) {
+        let
+          tag = jq(e.target),
+          father = tag.parent(),
+          shopCount = father.children('.num'),
+          shopNum = jq('.footer_cart_ico p'),
+          shop = [],
+          num = 0
+        if (this.$session.get('shopCart')) {
+          shop = this.$session.get('shopCart')
+          for (let [index, item] of shop.entries()) {
+            if (item.id === tag.attr('data-id')) {
+              if (item.num) {
+                shop[index].num = item.num - 1
+                shopCount.text(shop[index].num)
+                this.$session.set('shopCart', shop)
+              }
+              else {
+                tag.css('opacity', '0')
+              }
+            }
+          }
+          for (let item of shop) {
+            num += item.num
+          }
+          shopNum.text(num)
+        }
+        else if (shopCount.text() === '0') {
+          tag.css('opacity', '0')
+        }
       }
     }
   }
@@ -643,7 +706,7 @@
     bottom: .06rem;
     right: .2rem;
     z-index: 99;
-    transition: transform 2s cubic-bezier(.44, -0.81, .83, .67);
+    transition: transform .5s cubic-bezier(.44, -0.81, .83, .67);
     opacity: 0;
     /*display: none;*/
   }
@@ -653,7 +716,7 @@
     height: .2rem;
     background-color: #dd524d;
     border-radius: 100%;
-    transition: transform 2s linear;
+    transition: transform .5s linear;
   }
 
   footer .cart span {
@@ -674,4 +737,21 @@
     font-size: .18rem;
   }
 
+  .promo_title .del {
+    position: absolute;
+    right: 1rem;
+    opacity: 0;
+  }
+
+  .promo_title .num {
+    right: .6rem;
+    background-color: white;
+    color: #3a3a3a;
+  }
+
+  .promo_title .del-show {
+    position: absolute;
+    right: 1rem;
+    opacity: 1;
+  }
 </style>
