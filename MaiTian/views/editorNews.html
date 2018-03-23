@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Title</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel = "stylesheet" href = "/stylesheets/index.css">
+	<style>
+	</style>
+</head>
+<body>
+{%include "nav.html"%}
+<div class="container-fluid">
+	<section class="row justify-content-around">
+		<section class="col-2">
+			{%include 'sildeNav.html'%}
+		</section>
+		<section class="col-8">
+			{%if news%}
+				{%for item in news%}
+					<form action = "index" method="post">
+						<input type = "hidden" value="{{type}}" name="type">
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>ID</button>
+							</div>
+							<input type="text" class="form-control" placeholder="" name="_id" readonly value="{{item._id}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>title</button>
+							</div>
+							<input type = "text" class="form-control" placeholder="新闻标题" name="title" value="{{item.title}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>author</button>
+							</div>
+							<input type = "text" class="form-control" placeholder="作者" name="author" value="{{item.author}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>picUrl</button>
+							</div>
+							<input type = "text" class="form-control" placeholder="http://..." name="picUrl" value="{{item.picUrl}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>keywords</button>
+							</div>
+							<input type = "text" class="form-control" placeholder="关键字" name="keywords" value="{{item.keywords}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>description</button>
+							</div>
+							<input type = "text" class="form-control" placeholder="描述" name="description" value="{{item.description}}">
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>category</button>
+							</div>
+							<select class="custom-select" id="inputGroupSelect03" name="category">
+								{%for tag in cate%}
+									{%if item.cid == tag._id%}
+										<option selected value="{{tag._id}}">
+											{{tag.name}}
+										</option>
+									{%else%}
+										<option value = "{{tag._id}}">{{tag.name}}</option>
+									{%endif%}
+								{%endfor%}
+							</select>
+						</div>
+						<div class="input-group mb-3">
+							<textarea name = "content" id = "text1" cols = "" rows = "" style="visibility: hidden">{{item.content}}</textarea>
+							<section id="editor" style="width: 100%">
+								<p>{{item.content}}</p>
+							</section>
+						</div>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<button class="btn btn-outline-secondary" type="button" disabled>time</button>
+							</div>
+							<input type = "text" name="add_time" value="{{item.add_time}}">
+						</div>
+						<div class="input-group mb-3">
+							<button class="btn btn-primary" type="submit">submit</button>
+						</div>
+					</form>
+				{%endfor%}
+			{%else%}
+					<form action = "index" method="post">
+				<input type = "hidden" value="{{type}}" name="type">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>ID</button>
+					</div>
+					<input type="text" class="form-control" placeholder="" disabled name="_id" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>title</button>
+					</div>
+					<input type = "text" class="form-control" placeholder="新闻标题" name="title" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>author</button>
+					</div>
+					<input type = "text" class="form-control" placeholder="作者" name="author" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>picUrl</button>
+					</div>
+					<input type = "text" class="form-control" placeholder="http://..." name="picUrl" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>keywords</button>
+					</div>
+					<input type = "text" class="form-control" placeholder="关键字" name="keywords" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>description</button>
+					</div>
+					<input type = "text" class="form-control" placeholder="描述" name="description" value="">
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>category</button>
+					</div>
+					<select class="custom-select" id="inputGroupSelect04" name="category">
+						{%for item in cate%}
+							<option value = "{{item._id}}">{{item.name}}</option>
+						{%endfor%}
+
+					</select>
+				</div>
+				<div class="input-group mb-3">
+					<textarea name = "content" id = "text2" cols = "" rows = "" style="visibility: hidden"></textarea>
+					<section id="editor1" style="width: 100%">
+						
+					</section>
+				</div>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<button class="btn btn-outline-secondary" type="button" disabled>time</button>
+					</div>
+					<input type = "text" name="add_time" value="" placeholder="xxxx-xx-xx">
+				</div>
+				<div class="input-group mb-3">
+					<button class="btn btn-primary" type="submit">submit</button>
+				</div>
+			</form>
+			{%endif%}
+
+		</section>
+	</section>
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="/javascripts/wangEditor.min.js"></script>
+<script>
+	var E = window.wangEditor
+	var editor = new E('#editor')
+	var $text1 = $('#text1')// 两个参数也可以传入 elem 对象，class 选择器
+	var editor1 = new E('#editor1')
+	var $text2 = $('#text2')//
+	editor.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text1.val(html)
+	}
+	editor.create()
+	editor1.customConfig.onchange = function (html) {
+		// 监控变化，同步更新到 textarea
+		$text2.val(html)
+	}
+	editor1.create()
+	
+</script>
+</body>
+</html>

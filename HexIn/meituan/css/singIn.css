@@ -1,0 +1,88 @@
+#main{
+	position: absolute;
+	top: 80px;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	width: 980px;
+}
+.bg_img{
+	float: left;
+	height: 370px;
+	margin: 0 115px 0 0;
+	width: 480px;
+}
+#login_main{
+	margin-top: 40px;
+}
+#login_main h3{
+	font-weight: 400;
+	color: #666;
+}
+#login_main .tag{
+	width: 248px;
+	height: 24px;
+	padding: 5px;
+	border: 1px solid #aaa;
+	line-height: 24px;
+	vertical-align: top;
+	margin: 8px 0;
+}
+#username{
+	width: 230px;
+	height: 24px;
+	padding: 5px;
+	border: 1px solid #aaa;
+	line-height: 24px;
+	vertical-align: top;
+	margin: 8px 0;
+}
+.checkbox{
+	position: relative;
+	padding: 0 0 8px 0;
+	zoom: 1;
+}
+.checkbox label{
+	position: static;
+	width: auto;
+	padding: 0;
+	font-size: 12px;
+	text-align: left;
+}
+#singIn{
+	width: 258px;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 7px 20px 6px;
+	font-size: 14px;
+	font-weight: 700;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	letter-spacing: .1em;
+	text-align: center;
+	text-decoration: none;
+	border-width: 0 0 1px;
+	border-style: solid;
+	background-repeat: repeat-x;
+	border-radius: 2px;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	color: #fff;
+	background-color: #2bb8aa;
+	border-color: #109085;
+}
+#singUp{
+	color: #666;
+	font-size: 14px;
+	margin-top: 8px;
+}
+#singUp a{
+	color: #109085;
+}
+.msg{
+	line-height: 52px;
+	margin-left: 8px;
+}

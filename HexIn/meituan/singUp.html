@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Title</title>
+	<script src="js/jquery.min.js"></script>
+	<link rel = "stylesheet" href = "css/reset.css">
+	<link rel = "stylesheet" href = "css/singUp.css">
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+</head>
+<body>
+	<header class="header clearfix">
+		<section class="header-main">
+			<section>
+				<a href = "">美团</a>
+			</section>
+			<section>
+				<span>已有美团账号?</span>
+				<a id="singIn" href="singIn.html">登录</a>
+			</section>
+		</section>
+
+	</header>
+	<main id="main">
+		<div>
+			<label for = "username">用户名</label>
+			<input id="username" class="text" type = "text" placeholder="">
+			<span class="msg" id="usernamemsg"></span>
+		</div>
+		<div>
+			<label for = "password">密码</label>
+			<input id="password" class="text" type = "password" placeholder="">
+			<span class="msg" id="passmsg"></span>
+			<section class="passSth">
+				<span>弱</span>
+				<span>中</span>
+				<span>强</span>
+			</section>
+		</div>
+		<div>
+			<label for = "confirm_password">确认密码</label>
+			<input id="confirm_password" class="text" type = "password" placeholder="">
+			<span class="msg" id="confirm_passmsg"></span>
+		</div>
+		<div>
+			<label for = "code">验证码</label>
+			<input id="code" type = "text" placeholder="">
+			<button class="code" id="codeinfo"></button>
+			<span class="msg" id="codemsg"></span>
+		</div>
+		<button id="singUp">注册</button>
+	</main>
+	<script src="js/singUp.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+$default_color: #000;
+$test_color: #8e8e8e;
+$wechat_color: #86bf4a;
+$warning_color: #d71d32;
+$code_bg: #f4f4f4;
+
+.sub-nav-list.cure{
+  display: block;
+}
+.sub-nav-list{
+  display: none;
+}
+li{
+  float: left;
+  line-height: 40px;
+  padding-right: 46px;
+  box-sizing: border-box;
+  margin-right: 36px;
+  display: inline-block;
+  &:hover a {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #fff;
+  }
+  a{
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    display: inline-block;
+    position: relative;
+  }
+}
+.contain-third{
+  &:hover .third-nav-wrapper{
+    display: block;
+  }
+  .third-nav-wrapper{
+    width: 100%;
+    height: 410px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 38px;
+    display: none;
+    padding: 30px 0;
+    background-color: #fff;
+    z-index: 900;
+    .center-content{
+      width: 1150px;
+      text-align: left;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      .show-detail {
+        box-sizing: border-box;
+        padding-left: 19px;
+        padding-right: 19px;
+        width: 337px;
+        height: 250px;
+        float: right;
+        .title {
+          width: 100%;
+          margin-top: 40px;
+          text-align: center;
+          font-size: 14px;
+          color: #000;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      dl{
+        float: left;
+        width: 278px;
+        height: 352px;
+        box-sizing: border-box;
+        border-left: 1px solid #ccc;
+        padding: 0 50px;
+        dt {
+          width: 180px;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #000;
+          line-height: 18px;
+          margin-bottom: 20px;
+          a{
+            border: 0;
+            padding: 0;
+            color: #000;
+          }
+        }
+        dt:nth-of-type(2){
+          margin-top: 10px;
+          a{
+            border: 0;
+            padding: 0;
+            color: #000;
+          }
+        }
+        a{
+          color: $test_color;
+          &:hover{
+            text-decoration: underline;
+            border: 0;
+            padding: 0;
+          }
+        }
+        .hot {
+          color: #e01;
+        }
+      }
+      dl:first-child {
+        width: 228px;
+        border-left: 0;
+        padding-left: 0;
+      }
+      dl:nth-of-type(2){
+        dt{
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+}

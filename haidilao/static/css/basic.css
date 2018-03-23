@@ -1,0 +1,14 @@
+.swiper-pagination-bullet-active {
+  background: #d43e3d;
+}
+
+body {
+  padding-bottom: .49rem;
+}
+
+.f-thide {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: normal;
+}

@@ -1,0 +1,128 @@
+.clearfix:after{
+	content: ' ';
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+.header{
+	border-bottom: 2px solid #2bb8aa;
+	min-width: 980px;
+	color: #666;
+}
+.header a{
+	display: block;
+	font-size: 30px;
+	color: #2bb8aa;
+	text-decoration: none;
+}
+.header-main{
+	margin: 0 auto;
+	padding: 10px 0;
+	width: 980px;
+}
+.header-main section:nth-of-type(1){
+	 float: left;
+ }
+.header-main section:nth-of-type(2){
+	float: right;
+	line-height: 36px;
+}
+.header-main section:nth-of-type(2) span{
+	margin-right: 10px;
+	vertical-align: sub;
+}
+.header-main section:nth-of-type(2) a{
+	background-color: #2db3a6;
+	padding: 3px 10px;
+	font-size: 12px;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 1.5;
+	letter-spacing: .1em;
+	text-align: center;
+	text-decoration: none;
+	border-width: 0 0 1px;
+	border-style: solid;
+	border-radius: 2px;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	color: white;
+}
+#main{
+	width: 980px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+#main div{
+	position: relative;
+	padding: 8px 0 8px 110px;
+}
+#main label{
+	position: absolute;
+	left: 0;
+	width: 100px;
+	padding-top: 6px;
+	font-size: 14px;
+	text-align: right;
+	color: #333;
+}
+#main .text{
+	width: 248px;
+	height: 24px;
+	padding: 5px;
+	border: 1px solid #aaa;
+	line-height: 24px;
+	vertical-align: top;
+}
+#singUp{
+	color: white;
+	background-color: #2db3a6;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 7px 20px 6px;
+	font-size: 14px;
+	font-weight: 700;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.5;
+	letter-spacing: .1em;
+	text-align: center;
+	text-decoration: none;
+	border-width: 0 0 1px;
+	border-style: solid;
+	background-repeat: repeat-x;
+	border-radius: 2px;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+	cursor: pointer;
+	margin-left: 110px;
+}
+.code{
+	position: relative;
+	top: 0;
+	width: 100px;
+	height: 24px;
+	border: 0;
+	background-color: #cccccc;
+}
+.passSth span{
+	text-align: center;
+	display: inline-block;
+	width: 80px;
+	height: 24px;
+	background-color: #cccccc;
+	margin-top: 8px;
+	line-height: 24px;
+	color: white;
+}
+.msg{
+	display: inline-block;
+	font-size: 14px;
+	line-height: 36px;
+	margin-left: 10px;
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/MaiTian/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/api" />
+      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/api/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/React/my-app/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/YoHo/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/haidilao/test" />
+      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

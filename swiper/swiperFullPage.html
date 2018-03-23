@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "UTF-8">
+	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Title</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
+	<link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		html{
+			font-size: 62.5%;
+		}
+		body{
+			font-size: 1.6rem;
+		}
+		html,body{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		.container-fluid{
+			padding: 0;
+			height: 100%;
+		}
+		.swiper-container{
+			height: 100%;
+		}
+		.swiper-wrapper{
+			min-height: 100%;
+		}
+		.swiper-slide{
+			position: relative;
+			background-color: lightpink;
+			height: 100%;
+		}
+		.swiper-slide:nth-of-type(2){
+			background-color: #a8e2e2;
+		}
+		.swiper-slide:nth-of-type(3){
+			background-color: #cbe29c;
+		}
+		.row{
+			margin: 0;
+			flex-wrap: unset;
+			flex-direction: column;
+		}
+		.icon {
+			width: 1rem; height: 1rem;
+			vertical-align: -0.15rem;
+			fill: currentColor;
+			overflow: hidden;
+		}
+		.swiper-img{
+			position: absolute;
+			top: 0;
+			left: -50%;
+			transform:translateY(0) scale(.2) rotate(360deg);
+			opacity: 0;
+		}
+		.s-title{
+			top: -10%;
+			right: 5%;
+			transform:scale(.2) rotateX(1080deg);
+			opacity: 0;
+		}
+		.title{
+			position: absolute;
+			font-size: 4rem;
+			color: white;
+		}
+		.s-text{
+			position: absolute;
+			font-size: 2.4rem;
+			color: white;
+			top: 50%;
+			transform: scale(.2);
+			opacity: 0;
+		}
+		.s-text1{
+			right: 30%;
+		}
+		.s-text2{
+			right: 5%;
+
+		}
+		@keyframes hot {
+			0%{
+				top: 0;
+				left: -50%;
+				transform:translateY(0) scale(.2) rotate(360deg);
+				opacity: 0;
+			}
+			100%{
+				top: 50%;
+				left: 0;
+				transform:translateY(-50%) scale(1) rotate(0);
+				opacity: 1;
+			}
+		}
+		@keyframes title {
+			0%{
+				top: -10%;
+				right: 5%;
+				transform:scale(.2) rotateX(1080deg);
+				opacity: 0;
+			}
+			100%{
+				top: 20%;
+				right: 5%;
+				transform:scale(1) rotateX(0deg);
+				opacity: 1;
+			}
+		}
+		@keyframes text1 {
+			0%{
+				top: 50%;
+				right: 30%;
+				opacity: 0;
+				transform: scale(.2);
+			}
+			100%{
+				top: 40%;
+				right: 25%;
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+		@keyframes text2 {
+			0%{
+				top: 50%;
+				right: 5%;
+				opacity: 0;
+				transform: scale(.2);
+			}
+			100%{
+				top: 40%;
+				right: 10%;
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+		.hot-def{
+			animation: hot 1s;
+			animation-fill-mode: forwards;
+		}
+		.hot-title{
+			animation: title 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 1s;
+		}
+		.hot-text1{
+			animation: text1 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 1.5s;
+		}
+		.hot-text2{
+			animation: text2 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 1.5s;
+		}
+		.swiper-img .icon{
+			width: 50rem;
+			height: 50rem;
+		}
+		.s3{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			opacity: 0;
+		}
+		#container{
+			width: 60rem;
+			height: 40rem;
+		}
+		.charts{
+			animation: chart 1s;
+			animation-fill-mode: forwards;
+		}
+		@keyframes chart {
+			0%{
+				opacity: 0;
+				top: 60%;
+			}
+			100%{
+				opacity: 1;
+				top: 50%;
+				left: 50%;
+				transform: translateY(-50%) translateX(-50%);
+			}
+		}
+	</style>
+</head>
+<body>
+<main class="container-fluid">
+	<div class="swiper-container">
+		<div class="swiper-wrapper row">
+			<div class="swiper-slide col-12">
+				<div class="swiper-img s1-hot hot-def">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-miantiao"></use>
+					</svg>
+				</div>
+				<h3 class="s-title hot-title title s1-title">
+					(๑╹ヮ╹๑)ﾉ Studying makes me happy(๑╹ヮ╹๑)ﾉ Studying makes me happy
+				</h3>
+				<p class="s-text1 hot-text1 s-text s1-text1">…φ(๑˃∀˂๑)♪ 学习是我的全部</p>
+				<p class="s-text2 hot-text2 s-text s1-text2">(っ•̀ω•́)っ✎⁾⁾ 我爱学习</p>
+			</div>
+			<div class="swiper-slide col-12">
+				<div class="swiper-img s2-img">
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-jisuanqi"></use>
+					</svg>
+				</div>
+				<h3 class="s-title title s2-title">_φ(❐_❐✧ 人丑就要多读书</h3>
+				<p class="s-text1 s-text s2-text1">(。＿ 。） ✎＿学习计划走起</p>
+				<p class="s-text2 s-text s2-text2">_φ_(．．) 写作业</p>
+			</div>
+			<div class="swiper-slide col-12">
+				<div class="s3">
+					<div id="container" ></div>
+				</div>
+			</div>
+			<div class="swiper-slide col-12">Slide 4</div>
+		</div>
+		<div class="swiper-pagination"></div>
+
+	</div>
+</main>
+<script src="//at.alicdn.com/t/font_498038_x7hgbu4cvfpf1or.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js"></script>
+<script src="http://cdn.hcharts.cn/highcharts/highcharts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+<script>
+	var mySwiper = new Swiper ('.swiper-container', {
+		direction: 'vertical',
+		// 如果需要分页器
+		pagination: {
+			el: '.swiper-pagination',
+		},
+		on:{
+			slideChangeTransitionEnd:function () {
+				if($('.s1-hot').parent().is('.swiper-slide-active')){
+					$('.s1-hot').addClass('hot-def')
+					$('.s1-title').addClass('hot-title')
+					$('.s1-text1').addClass('hot-text1')
+					$('.s1-text2').addClass('hot-text2')
+				}
+				else {
+					$('.s1-hot').removeClass('hot-def')
+					$('.s1-title').removeClass('hot-title')
+					$('.s1-text1').removeClass('hot-text1')
+					$('.s1-text2').removeClass('hot-text2')
+
+				}
+
+				if($('.s2-img').parent().is('.swiper-slide-active')){
+					$('.s2-img').addClass('hot-def')
+					$('.s2-title').addClass('hot-title')
+					$('.s2-text1').addClass('hot-text1')
+					$('.s2-text2').addClass('hot-text2')
+				}
+				else {
+					$('.s2-img').removeClass('hot-def')
+					$('.s2-title').removeClass('hot-title')
+					$('.s2-text1').removeClass('hot-text1')
+					$('.s2-text2').removeClass('hot-text2')
+				}
+
+				if($('.s3').parent().is('.swiper-slide-active')){
+					$('.s3').addClass('charts')
+				}
+				else {
+					$('.s3').removeClass('charts')
+				}
+			}
+		},
+		// 如果需要滚动条
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
+		mousewheel: true,
+	})
+	var options = {
+		chart: {
+			animation: {
+				duration: 1500,
+				easing: 'easeOutBounce'
+			}
+		},
+		title: {
+			text: '我的第一个图表'                 // 标题
+		},
+		xAxis: {
+			categories: ['苹果', '香蕉', '橙子', '草莓', '樱桃', '奇异果', '西瓜', '蓝莓']   // x 轴分类
+		},
+		yAxis: {
+			title: {
+				text: '吃水果个数'                // y 轴标题
+			}
+		},
+		series:[{
+			data:[3,4,7,1,5,3,9],
+			name:'xiaoming'
+		},{
+			data:[1,2,5,null,5,9,8,8],
+			name:'xiaohong'
+		},]
+	};
+	Highcharts.theme = {
+		colors: ['#058DC7', '#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572',
+		         '#FF9655', '#FFF263', '#6AF9C4'],
+		chart: {
+			backgroundColor: {
+				linearGradient: [0, 0, 500, 500],
+				stops: [
+					[0, 'rgb(255, 255, 255)'],
+					[0, 'rgb(240, 240, 255)']
+				]
+			},
+		},
+		title: {
+			style: {
+				color: '#000',
+				font: 'bold 16px "Trebuchet MS", Verdana, sans-serif'
+			}
+		},
+		subtitle: {
+			style: {
+				color: '#666666',
+				font: 'bold 12px "Trebuchet MS", Verdana, sans-serif'
+			}
+		},
+
+		legend: {
+			itemStyle: {
+				font: '9pt Trebuchet MS, Verdana, sans-serif',
+				color: 'black'
+			},
+			itemHoverStyle:{
+				color: 'gray'
+			}
+		}
+	};
+	Highcharts.setOptions(Highcharts.theme);
+	// 图表初始化函数
+	$('#container').highcharts(options)
+</script>
+</body>
+</html>
