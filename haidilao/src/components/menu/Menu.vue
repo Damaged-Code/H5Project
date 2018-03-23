@@ -381,7 +381,7 @@
         list.removeClass('active')
         list.eq(index).addClass('active')
         if (index > 0) {
-          listmenu.scrollTop(getHei(ullist, index) + 200)
+          listmenu.scrollTop(getHei(ullist, index) + ullist.eq(0).innerHeight())
         }
         else {
           listmenu.scrollTop(0)
