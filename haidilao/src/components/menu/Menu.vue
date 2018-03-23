@@ -154,7 +154,8 @@
         drinks: [],
         season: [],
         all: [],
-        ballShow: false
+        ballShow: false,
+        count:0
       }
     },
     mounted() {
@@ -331,8 +332,8 @@
               break
             }
             else {
-              num++
-              shopCart.push({id: id, num: num})
+              this.count++
+              shopCart.push({id: id, num: this.count})
               this.$session.set('shopCart', shopCart)
               break
             }
@@ -352,12 +353,12 @@
           this.$session.set('money', money)
         }
         else {
-          num++
-          shopCart.push({id: id, num: num})
-          shopNum.text(num)
+          this.count++
+          shopCart.push({id: id, num: this.count})
+          shopNum.text(this.count)
           for (let item of this.all) {
             if (item._id === id) {
-              money += num * item.price
+              money += this.count * item.price
               break
             }
           }
