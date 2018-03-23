@@ -31,6 +31,7 @@
                 <p>{{item.name}}</p>
                 <a>¥{{item.price}}.0一锅</a>
                 <i class="iconfont" @click="shopCart" @click.prevent="ballAnimatie" :data-id="item._id">+</i>
+                <i class="iconfont" :data-id="item._id">-</i>
               </div>
             </div>
             <div class="ball">
