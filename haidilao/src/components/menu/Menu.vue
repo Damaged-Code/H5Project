@@ -332,8 +332,8 @@
               break
             }
             else {
-              this.count++
-              shopCart.push({id: id, num: this.count})
+              num++
+              shopCart.push({id: id, num: num})
               this.$session.set('shopCart', shopCart)
               break
             }
@@ -353,12 +353,12 @@
           this.$session.set('money', money)
         }
         else {
-          this.count++
-          shopCart.push({id: id, num: this.count})
-          shopNum.text(this.count)
+          num++
+          shopCart.push({id: id, num: num})
+          shopNum.text(num)
           for (let item of this.all) {
             if (item._id === id) {
-              money += this.count * item.price
+              money += num * item.price
               break
             }
           }
