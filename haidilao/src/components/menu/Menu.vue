@@ -443,7 +443,9 @@
           shopCount = father.children('.num'),
           shopNum = jq('.footer_cart_ico p'),
           shop = [],
-          num = 0
+          num = 0,
+          money = 0,
+          allMoney = jq('.allMoney')
         if (this.$session.get('shopCart')) {
           shop = this.$session.get('shopCart')
           for (let [index, item] of shop.entries()) {
@@ -461,6 +463,15 @@
           for (let item of shop) {
             num += item.num
           }
+          for (let item of this.all) {
+            for (let tag of shop) {
+              if (item._id === tag.id) {
+                money += tag.num * item.price
+              }
+            }
+          }
+          allMoney.text(money)
+          this.$session.set('money', money)
           shopNum.text(num)
         }
         else if (shopCount.text() === '0') {
