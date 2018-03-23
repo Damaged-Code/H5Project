@@ -1,5 +1,5 @@
-const fs = require('fs')
-const router = require('express').Router()
+const fs = require('fs');
+const router = require('express').Router();
 
 function addMapping(router, mapping) {
 	for (var url in mapping) {
@@ -37,7 +37,7 @@ function addControllers(router, dir) {
 
 module.exports = function (dir) {
 	let
-		controllers_dir = dir || 'routes'
+		controllers_dir = dir || 'routes';
 	addControllers(router, controllers_dir);
 	return router;
 };

@@ -166,20 +166,20 @@
 <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="/javascripts/wangEditor.min.js"></script>
 <script>
-	var E = window.wangEditor
-	var editor = new E('#editor')
-	var $text1 = $('#text1')// 两个参数也可以传入 elem 对象，class 选择器
-	var editor1 = new E('#editor1')
-	var $text2 = $('#text2')//
+	var E = window.wangEditor;
+	var editor = new E('#editor');
+	var $text1 = $('#text1');// 两个参数也可以传入 elem 对象，class 选择器
+	var editor1 = new E('#editor1');
+	var $text2 = $('#text2');//
 	editor.customConfig.onchange = function (html) {
 		// 监控变化，同步更新到 textarea
 		$text1.val(html)
-	}
-	editor.create()
+	};
+	editor.create();
 	editor1.customConfig.onchange = function (html) {
 		// 监控变化，同步更新到 textarea
 		$text2.val(html)
-	}
+	};
 	editor1.create()
 	
 </script>

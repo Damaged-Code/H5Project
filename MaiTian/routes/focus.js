@@ -1,11 +1,11 @@
-const db = require('monk')('localhost/haidilao')
-const focus = db.get('focus')
+const db = require('monk')('localhost/haidilao');
+const focus = db.get('focus');
 
-let result
+let result;
 
 /* GET home page. */
 async function getFocus(req, res, next) {
-	result = await focus.find({})
+	result = await focus.find({});
 	res.json({
 		result: result
 	})

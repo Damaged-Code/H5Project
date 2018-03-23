@@ -1,7 +1,7 @@
-const db = require('monk')('localhost/haidilao')
-const order = db.get('order')
+const db = require('monk')('localhost/haidilao');
+const order = db.get('order');
 
-let result = 0
+let result = 0;
 
 async function PostOrder(req, res, next) {
 	if (order.insert(JSON.parse(req.query.info))) {
@@ -18,7 +18,7 @@ async function PostOrder(req, res, next) {
 
 async function GetOrder(req, res, next) {
 
-	result = await order.find({})
+	result = await order.find({});
 	console.log(result);
 	res.json({
 		result: result
@@ -28,4 +28,4 @@ async function GetOrder(req, res, next) {
 module.exports = {
 	'POST /order': PostOrder,
 	'GET /order': GetOrder
-}
+};

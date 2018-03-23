@@ -1,11 +1,11 @@
 
-const db = require('monk')('localhost/MaiTian')
-const news = db.get('news')
+const db = require('monk')('localhost/MaiTian');
+const news = db.get('news');
 
-let result
+let result;
 /* GET home page. */
 async function getNews(req, res, next) {
-	result = await news.find({})
+	result = await news.find({});
 	res.json({
 		data:result
 	         })
