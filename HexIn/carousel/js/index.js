@@ -8,7 +8,7 @@ $(function () {
 	    next = $('#next'),
 	    index = 0,
 	    main = $('#main'),
-	    timer = null;
+		timer = null;
 	main.hover(function () {
 		clearInterval(timer)
 	},function () {
@@ -83,7 +83,7 @@ $(function () {
 			index = 0
 		}
 		imgPlay(index)
-	},2000);
+	}, 2000);
 
 	function imgPlay(index) {
 		list.removeClass('active_list');

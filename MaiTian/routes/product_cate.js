@@ -6,7 +6,7 @@ let
 
 /* GET home page. */
 async function getProductCate(req, res, next) {
-    result = await product_cate.find({}, );
+	result = await product_cate.find({},);
 	res.json({
 		result: result
 	})

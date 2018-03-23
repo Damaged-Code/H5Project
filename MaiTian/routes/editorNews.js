@@ -1,4 +1,3 @@
-
 const db = require('monk')('localhost/MaiTian');
 const newsInfo = db.get('news');
 const monk = require('monk');
@@ -33,7 +32,7 @@ async function postEditorNews(req, res, next) {
 	else {
 		if(req.body.editorNews){
 			id = monk.id(req.body.editorNews);
-			news = await newsInfo.find({_id:id});
+			news = await newsInfo.find({_id: id});
 			//cate = await category.find({_id:monk.id(news[0].cid)})
 			cate = await category.find({})
 			//console.log(cate)

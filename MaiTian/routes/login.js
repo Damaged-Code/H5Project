@@ -1,4 +1,3 @@
-
 const db = require('monk')('localhost/MaiTian');
 const admin = db.get('admin');
 

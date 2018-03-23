@@ -32,9 +32,9 @@ async function postIndex(req, res, next) {
 		newsinfo.content = req.body.content;
 		newsinfo.add_time = req.body.add_time;
 		newsinfo.cid = req.body.category;
-		newsinfo.category = (await news_cate.find({_id:monk.id(req.body.category)}))[0].name;
+		newsinfo.category = (await news_cate.find({_id: monk.id(req.body.category)}))[0].name;
 		//console.log(newsinfo)
-		await news.update({_id:monk.id(req.body._id)},{$set:newsinfo});
+		await news.update({_id: monk.id(req.body._id)}, {$set: newsinfo});
 		console.log(req.body._id);
 		newsInfo = await news.find({})
 		//console.log(req.body)
@@ -48,12 +48,12 @@ async function postIndex(req, res, next) {
 		newsinfo.content = req.body.content;
 		newsinfo.add_time = req.body.add_time;
 		newsinfo.cid = req.body.category;
-		newsinfo.category = (await news_cate.find({_id:monk.id(req.body.category)}))[0].name;
+		newsinfo.category = (await news_cate.find({_id: monk.id(req.body.category)}))[0].name;
 		await news.insert(newsinfo);
 		newsInfo = await news.find({})
 	}
 	else if(req.body.delNews){
-		await news.remove({_id:monk.id(req.body.delNews)});
+		await news.remove({_id: monk.id(req.body.delNews)});
 		newsInfo = await news.find({})
 	}
 	res.render('index.html',{

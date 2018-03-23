@@ -6,7 +6,7 @@ $(function () {
 	    singIn = $('#singIn'),
 	    passCheck = $('#passCheck'),
 	    flag = false,
-	    users = JSON.parse(Cookies.get('users'));
+		users = JSON.parse(Cookies.get('users'));
 	if(Boolean(Cookies.get('checked'))){
 		var newusers = (JSON.parse(Cookies.get('newusers'))).user;
 		username.val(newusers[0].split('-')[0]);
@@ -27,7 +27,7 @@ $(function () {
 			}
 		}
 		if(passCheck.is(':checked') && flag){
-			Cookies.set('checked','true');
+			Cookies.set('checked', 'true');
 			Cookies.set('newusers',{user:[`${username.val()}-${password.val()}`]},{ expires: 365 })
 		}
 		else {
