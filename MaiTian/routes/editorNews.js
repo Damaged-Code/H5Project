@@ -9,7 +9,6 @@ let news;
 let cate;
 async function getEditorNews(req, res, next) {
 	if(req.session.userInfo){
-		//console.log(newsInfo)
 		cate = await category.find({});
 		res.render('editorNews.html',{
 			username:req.session.userInfo,
@@ -33,9 +32,9 @@ async function postEditorNews(req, res, next) {
 		if(req.body.editorNews){
 			id = monk.id(req.body.editorNews);
 			news = await newsInfo.find({_id: id});
-			//cate = await category.find({_id:monk.id(news[0].cid)})
+	
 			cate = await category.find({})
-			//console.log(cate)
+		
 		}
 		res.render('editorNews.html',{
 			username:req.session.userInfo,
@@ -44,7 +43,6 @@ async function postEditorNews(req, res, next) {
 			type:'editor'
 		})
 	}
-	//
 }
 module.exports = {
 	'GET /editorNews':getEditorNews,
