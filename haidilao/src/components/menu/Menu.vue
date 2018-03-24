@@ -598,8 +598,6 @@
     padding-bottom: .5rem;
   }
 
-  .cate_listmenu ul {
-  }
 
   .cate_listmenu ul li {
     height: 1.4rem;
