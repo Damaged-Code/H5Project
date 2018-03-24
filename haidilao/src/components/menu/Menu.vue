@@ -10,7 +10,7 @@
     <section id="banWeChat">
       <div class="cate_Classification">
         <ul>
-          <li v-for="(item,index) in classiflylist" @click="jump" :data-index='index' :class="[index==0 ? 'active':'']">
+          <li v-for="(item,index) in classiflylist" @click="jump" :data-index='index' :class="[index==0 ? 'active':'']" :key="index">
             {{item.name}}
           </li>
         </ul>
