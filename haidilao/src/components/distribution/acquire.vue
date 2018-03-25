@@ -93,7 +93,7 @@
         for (let item of shopCart) {
           this.$http({
             method: 'post',
-            baseURL: 'http://10.36.139.179:3007',
+            baseURL: 'http://localhost:3007',
             url: `/product`,
             withCredentials: true,
             params: {id: item.id}
@@ -119,7 +119,7 @@
       }
       this.$http({
         method: 'get',
-        baseURL: 'http://10.36.139.179:3007',
+        baseURL: 'http://localhost:3007',
         url: `/shop`,
         withCredentials: true,
       })
@@ -148,7 +148,7 @@
       cityName() {
         this.$http({
           method: 'post',
-          baseURL: 'http://10.36.139.179:3007',
+          baseURL: 'http://localhost:3007',
           url: `/shop`,
           params: {id: this.value},
           withCredentials: true,

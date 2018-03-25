@@ -59,7 +59,7 @@
         for (let item of shopCart) {
           this.$http({
             method: 'post',
-            baseURL: 'http://10.36.139.179:3007',
+            baseURL: 'http://localhost:3007',
             url: `/product`,
             withCredentials: true,
             params: {id: item.id}
@@ -87,45 +87,7 @@
       else {
         this.show = false
       }
-      /*else {
-        this.$http({
-          method: 'get',
-          baseURL: 'http://10.36.139.179:3007',
-          url: `/order`,
-          withCredentials: true,
-        })
-          .then((res) => {
-            order = res.data.result
-            for (let item of order) {
-              money += item.money
-              for (let tag of item.products) {
-                this.$http({
-                  method: 'post',
-                  baseURL: 'http://10.36.139.179:3007',
-                  url: `/product`,
-                  withCredentials: true,
-                  params: {id: tag.id}
-                })
-                  .then((res) => {
-                    datas = res.data.result
-                    datas[0].num = tag.num
-                    this.product.push(datas[0])
-                    if (this.product.length == item.products.length) {
-                      this.show = true
-                    }
 
-                  })
-                  .catch((err) => {
-                    console.log(err);
-                  })
-              }
-            }
-            allMoney.text(money)
-          })
-          .catch((err) => {
-            console.log(err);
-          })
-      }*/
     },
     methods: {
       SubmitOrders() {
@@ -156,14 +118,14 @@
           }
           this.$http({
             method: 'post',
-            baseURL: 'http://10.36.139.179:3007/order',
+            baseURL: 'http://localhost:3007/order',
             params: {info: info},
             withCredentials: true
           })
             .then((res) => {
               if (res.data.result) {
                 this.$session.clear()
-                this.router.push('/')
+                this.router.push('/orderinfo')
               }
             })
             .catch((err) => {
@@ -331,5 +293,6 @@
     margin: 0;
     padding: 0;
     font-size: .18rem;
+
   }
 </style>

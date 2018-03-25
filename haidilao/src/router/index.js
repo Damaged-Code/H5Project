@@ -52,7 +52,11 @@ export default new Router({
       name: 'myorderseat',
       component: resolve => require(['../components/order/MyOrder'], resolve),
     },
-
+    {
+      path: '/orderinfo',
+      name: 'orderinfo',
+      component: resolve => require(['../components/order/OrderInfo'], resolve),
+    },
   ]
 })
 

@@ -18,7 +18,7 @@
     <div class="shop-list">
       <ul>
         <li v-for="item in shop" :key="item.id">
-          <router-link to="" :to="{name:'shopdetail',params:{id:item._id}}">
+          <router-link :to="{name:'shopdetail',params:{id:item._id}}">
             <div class="shop-left">
               <img :src="item.picUrl" alt="">
             </div>
@@ -60,7 +60,7 @@
 
       this.$http({
         method: 'get',
-        baseURL: 'http://10.36.139.179:3007',
+        baseURL: 'http://localhost:3007',
         timeout: 3000,
         url: `/shop`,
         withCredentials: true

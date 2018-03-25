@@ -29,7 +29,7 @@
     mounted() {
       this.$http({
         method: 'get',
-        baseURL: 'http://10.36.139.179:3007',
+        baseURL: 'http://localhost:3007',
         url: '/focus',
         withCredentials: true
       })

@@ -73,7 +73,7 @@
       <div id="roadWay">
 			    	<span>
 			    		<i class="iconfont">&#xe61a;</i>
-			    		tel:<a v-for="item in shopDeli.tel">{{item}}&nbsp&nbsp&nbsp</a>
+			    		tel:<a v-for="item in shopDeli.tel" :key="item.id">{{item}} &nbsp;&nbsp;</a>
 
 			    	</span>
         <span>
@@ -107,7 +107,7 @@
       this.shopId = this.$route.params.id
       this.$http({
         method: 'post',
-        baseURL: 'http://10.36.139.179:3007',
+        baseURL: 'http://localhost:3007',
         timeout: 3000,
         url: `/shop`,
         params: {id: id},

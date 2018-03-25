@@ -14,7 +14,7 @@
         </router-link>
       </li>
       <li>
-        <router-link to="/myorderseat">
+        <router-link to="/orderinfo">
           <i class="iconfont"> &#xe61a;</i>
           <span>我的</span>
         </router-link>

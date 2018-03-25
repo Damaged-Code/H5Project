@@ -132,7 +132,7 @@
         for (let item of shopCart) {
           this.$http({
             method: 'post',
-            baseURL: 'http://10.36.139.179:3007',
+            baseURL: 'http://localhost:3007',
             url: `/product`,
             withCredentials: true,
             params: {id: item.id}

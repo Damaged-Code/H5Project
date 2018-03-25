@@ -138,7 +138,7 @@
       this.shopId = this.$route.params.id
       this.$http({
         method: 'post',
-        baseURL: 'http://10.36.139.179:3007',
+        baseURL: 'http://localhost:3007',
         timeout: 3000,
         url: `/shop`,
         params: {id: this.shopId},
