@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import Footer from './footer/Footer'
+import Thermometer from './thermometer/Thermometer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-	      <Footer/>
+	      <Thermometer/>
       </div>
     );
   }

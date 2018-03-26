@@ -79,7 +79,7 @@ class Calculator extends React.Component {
 			<div>
 				<TemperatureInput
 					scale="c"
-					temperature={celsius}
+                    temperature={celsius}
 					onTemperatureChange={this.handleCelsiusChange}/>
 				<TemperatureInput
 					scale="f"
@@ -92,7 +92,7 @@ class Calculator extends React.Component {
 	}
 }
 
-export default class Footer extends Component { 
+export default class Thermometer extends Component { 
     render() { 
         return (
 	        <Calculator/>
