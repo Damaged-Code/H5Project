@@ -1,5 +1,5 @@
 <template>
-  <header class="" @click="test">
+  <header>
     <div class="header-action">
       <section class="qr-code">
         <i class="iconfont"> &#xe677;</i>
@@ -40,11 +40,6 @@
           console.log(err);
         })
     },
-    methods: {
-      test() {
-        console.log(2)
-      }
-    }
   }
   window.onload = function () {
     new Swiper('.swiper-container', {
@@ -67,7 +62,6 @@
       img {
         width: 100%;
       }
-
     }
     .header-action {
       position: absolute;

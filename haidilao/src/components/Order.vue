@@ -9,7 +9,6 @@
           <i class="iconfont">&#xe822;</i>
         </div>
       </router-link>
-
       <div class="header-right">
         <input type="text" placeholder="请输入门店名称">
         <i class="iconfont">&#xe617;</i>
@@ -45,6 +44,9 @@
 </template>
 
 <script>
+/**
+ * 城市列表
+ */
   import footerNav from './Footer'
 
   export default {
@@ -53,11 +55,7 @@
         shop: [],
       }
     },
-    created() {
-
-    },
     mounted() {
-
       this.$http({
         method: 'get',
         baseURL: 'http://localhost:3007',
@@ -70,11 +68,9 @@
         })
         .catch((err) => {
         })
-
     },
     components: {
       footerNav,
-
     }
   }
 </script>

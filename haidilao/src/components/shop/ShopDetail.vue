@@ -4,7 +4,6 @@
       <router-link class="back" to="/order">
         <i class="iconfont"> &#xe64e;</i>
       </router-link>
-
       <ul>
         <li>
           <img :src="shopDeli.picUrl" alt="">
@@ -15,7 +14,6 @@
       <div id="IntroduceFont">
         <p>{{shopDeli.name}}</p>
         <div id="IntroduceStar">
-
           <span>
 						<el-rate
               v-model="value5"
@@ -39,7 +37,6 @@
               <i class="iconfont">&#xe746;</i>
               <p>排号</p>
             </router-link>
-
           </li>
           <li>
             <router-link to="/menu">
@@ -65,7 +62,6 @@
         <p class="f-thide shop-des">
           {{shopDeli.description}}
         </p>
-
       </div>
       <div id="detail">
         <p>点击展开</p>
@@ -74,14 +70,12 @@
 			    	<span>
 			    		<i class="iconfont">&#xe61a;</i>
 			    		tel:<a v-for="item in shopDeli.tel" :key="item.id">{{item}} &nbsp;&nbsp;</a>
-
 			    	</span>
         <span>
 			    		<i class="iconfont">&#xe618;</i>
 			    		<em>{{shopDeli.path}}</em>
 			    	</span>
       </div>
-
       <div id="footer2">
         <i class="iconfont"> &#xe626;</i>
         <span>写评论</span>
@@ -154,12 +148,10 @@
     left: .1rem;
     top: .1rem;
     color: whitesmoke;
-
   }
 
   .iconfont {
     font-size: .3rem;
-
   }
 
   section {
@@ -167,13 +159,11 @@
     border-bottom: 1px solid #ccc;
     width: 100%;
     margin-bottom: 0.12rem;
-
   }
 
   section #IntroduceFont {
     height: 100%;
     width: 100%;
-
   }
 
   #IntroduceFont p {
@@ -227,7 +217,6 @@
     float: left;
     margin: 0 auto;
     margin-right: 0.1rem;
-
   }
 
   #address span {
@@ -261,7 +250,6 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-
   }
 
   #footer1 ul li {
@@ -270,7 +258,6 @@
     height: 0.6rem;
     width: 25%;
     font-size: .12rem;
-
   }
 
   #footer1 ul li a {
@@ -334,13 +321,11 @@
     align-items: center;
     color: red;
     overflow: hidden;
-
   }
 
   #footer2 i {
     font-size: 0.2rem;
     color: white;
-
   }
 
   #footer2 span {

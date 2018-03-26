@@ -4,13 +4,11 @@
       <router-link to="/">
         <i class="iconfont"> &#xe64e;</i>
       </router-link>
-
       <h2>订单详情</h2>
     </header>
     <section class="content">
       <ul>
         <li v-for="item in orderlist" :key="item.id">
-
           <img :src="item.picUrl" alt="">
           <section>
             <p class="name">店名：</p>
@@ -49,7 +47,6 @@ export default {
                 order = res.data.result
                 for (let [index, item] of order.entries()) {
                     this.money += item.money
-
                     this.$http({
                         method: 'post',
                         baseURL: 'http://localhost:3007',
@@ -62,7 +59,6 @@ export default {
                             order[index].picUrl = datas.picUrl
                             order[index].shopName = datas.name
                             this.orderlist.push(order[index])
-                            console.log(this.orderlist)
                         })
                         .catch(err => {
                             console.log(err)
