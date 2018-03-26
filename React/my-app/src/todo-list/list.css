@@ -1,0 +1,6 @@
+.list{
+    flex-direction: column;
+}
+.list li button{
+    margin-left: 15px;
+}
