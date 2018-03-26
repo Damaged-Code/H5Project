@@ -64,7 +64,6 @@
                    params:{idx:'1'}
                  })
         .then(async function (res) {
-          console.log(res.data)
           _this.temp = await res.data.playlist.tracks
           for(let tag in _this.temp){
             _this.data.push({
