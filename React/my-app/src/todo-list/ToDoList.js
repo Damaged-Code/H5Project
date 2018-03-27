@@ -9,12 +9,12 @@ class ToDoListRemove extends React.Component {
     dataChange = e => {
         let tag = e.target,
             index = tag.getAttribute('index'),
-            data = this.props.datas
+            data = this.props.data
         data.splice(index, 1)
         this.props.onDataChange(data)
     }
     render() {
-        const data = this.props.datas
+        const data = this.props.data
         return (
             <ul className="list">
                 {data.map((val, key) => {
@@ -46,7 +46,7 @@ class ToDoListInput extends React.Component {
     }
     commitData = e => {
         let input = this.refs.input,
-            data = this.props.datas
+            data = this.props.data  
 
         data.push(input.value)
         this.props.onDataChange(data)
@@ -82,11 +82,11 @@ class ToDoListComponent extends Component {
         return (
             <div>
                 <ToDoListInput
-                    datas={this.state.value}
+                    data={this.state.value}
                     onDataChange={this.handleChange}
                 />
                 <ToDoListRemove
-                    datas={this.state.value}
+                    data={this.state.value}
                     onDataChange={this.handleChange}
                 />
             </div>
