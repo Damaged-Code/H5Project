@@ -6,15 +6,13 @@ class ToDoListRemove extends React.Component {
         super(props)
         this.state = {}
     }
-    dataChange = (e) => {
-        let
-            tag = e.target,
+    dataChange = e => {
+        let tag = e.target,
             index = tag.getAttribute('index'),
             data = this.props.datas
         data.splice(index, 1)
         this.props.onDataChange(data)
-        
-     }
+    }
     render() {
         const data = this.props.datas
         return (
@@ -23,7 +21,9 @@ class ToDoListRemove extends React.Component {
                     return (
                         <li key={key}>
                             {val}
-                            <button index={key} onClick={this.dataChange}>del</button>
+                            <button index={key} onClick={this.dataChange}>
+                                del
+                            </button>
                         </li>
                     )
                 })}
@@ -36,19 +36,18 @@ class ToDoListInput extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            listVal: '',
+            listVal: ''
         }
     }
-    handleChange = (e) => {
+    handleChange = e => {
         this.setState({
             listVal: e.target.value
         })
     }
-    commitData = (e) => { 
-        let
-            input = this.refs.input,
+    commitData = e => {
+        let input = this.refs.input,
             data = this.props.datas
-        
+
         data.push(input.value)
         this.props.onDataChange(data)
     }
@@ -60,7 +59,7 @@ class ToDoListInput extends React.Component {
                     type="text"
                     value={this.state.listVal}
                     onChange={this.handleChange}
-                    ref='input'
+                    ref="input"
                 />
                 <button onClick={this.commitData}>commit</button>
             </div>
@@ -86,7 +85,10 @@ class ToDoListComponent extends Component {
                     datas={this.state.value}
                     onDataChange={this.handleChange}
                 />
-                <ToDoListRemove datas={this.state.value} onDataChange={this.handleChange}/>
+                <ToDoListRemove
+                    datas={this.state.value}
+                    onDataChange={this.handleChange}
+                />
             </div>
         )
     }
