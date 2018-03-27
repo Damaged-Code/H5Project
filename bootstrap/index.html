@@ -1,363 +1,456 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang="en">
+
 <head>
-	<meta charset = "UTF-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>bootstrap</title>
-	<link rel = "stylesheet" href = "http://libs.cdnjs.net/normalize/7.0.0/normalize.min.css">
-	<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>bootstrap</title>
+    <link rel="stylesheet" href="http://libs.cdnjs.net/normalize/7.0.0/normalize.min.css">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
 
-	<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<style>
-		li{
-			list-style: none;
-		}
-		.jumbotron:after {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			background: url(https://static.bootcss.com/www/assets/img/bs-docs-masthead-pattern.png) repeat center center;
-			opacity: .4;
-		}
-		.jumbotron {
-			position: relative;
-			padding: 40px 0;
-			color: #fff;
-			text-align: center;
-			text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
-			background: #020031;
-			background: -webkit-gradient(linear,left bottom,right top,color-stop(0,#020031),color-stop(100%,#6d3353));
-			background: -webkit-linear-gradient(45deg,#020031 0,#6d3353 100%);
-			background: -o-linear-gradient(45deg,#020031 0,#6d3353 100%);
-			background: linear-gradient(45deg,#020031 0,#6d3353 100%);
-			-webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-			box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
-		}
-		.jumbotron a {
-			color: #fff;
-			color: rgba(255,255,255,.5);
-			-webkit-transition: all .2s ease-in-out;
-			-o-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;
-		}
-		.masthead {
-			padding: 60px 0 80px;
-			margin-bottom: 0;
-			color: #fff;
-			text-align: center;
-		}
-		.masthead h1 {
-			font-size: 60px;
-			line-height: 1;
-			letter-spacing: -2px;
-			font-weight: 700;
-		}
-		.masthead h2 {
-			font-size: 18px;
-			font-weight: 200;
-			line-height: 1.25;
-		}
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+        crossorigin="anonymous">
+    <style>
+        li {
+            list-style: none;
+        }
 
-		.masthead p {
-			font-size: 40px;
-			font-weight: 200;
-			line-height: 1.25;
-		}
-		.masthead .masthead-button-links {
-			margin-top: 30px;
-		}
-		.masthead-links {
-			margin: 0;
-			padding: 0;
-			list-style: none;
-		}
-		.masthead-links li {
-			display: inline;
-			padding: 0 10px;
-			color: rgba(255,255,255,.25);
-		}
-		.bc-social {
-			padding: 15px 0;
-			text-align: center;
-			background-color: #f5f5f5;
-			border-top: 1px solid #fff;
-			border-bottom: 1px solid #ddd;
-		}
-		.bc-social-buttons {
-			margin-left: 0;
-			margin-bottom: 0;
-			padding-left: 0;
-			list-style: none;
-		}
-		.bc-social-buttons li {
-			display: inline-block;
-			line-height: 1;
-			color: #555;
-		}
-		.bc-social-buttons li a {
-			color: #555;
-		}
-		.bc-social-buttons li .fa {
-			font-size: 18px;
-			margin-right: 3px;
-		}
-		.bc-social-buttons>li+li:before {
-			padding: 0 10px;
-			color: #ccc;
-			content: "|";
-		}
-		.page-header {
-			padding-bottom: 9px;
-			margin: 40px 0 20px;
-			border-bottom: 1px solid #eee;
-		}
-		.projects-header {
-			width: 60%;
-			text-align: center;
-			margin: 60px 0 10px;
-			font-weight: 200;
-			margin-bottom: 40px;
-			display: block;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.projects-header h2 {
-			font-size: 30px;
-			letter-spacing: -1px;
-		}
-		.footer {
-			color: #777;
-			padding: 30px 0;
-			border-top: 1px solid #e5e5e5;
-			margin-top: 70px;
-		}
-		hr {
-			height: 0;
-			-webkit-box-sizing: content-box;
-			-moz-box-sizing: content-box;
-			box-sizing: content-box;
-		}
-		hr {
-			margin-top: 20px;
-			margin-bottom: 20px;
-			border: 0;
-			border-top: 1px solid #eee;
-		}
-		.footer-bottom {
-			font-size: 13px;
-		}
-		.list-inline {
-			padding-left: 0;
-			margin-left: -5px;
-			list-style: none;
-		}
-		@media screen and (min-width: 768px){
-			.masthead {
-				padding: 90px 0 110px;
-			}
-			.masthead h1 {
-				font-size: 90px;
-			}
-			.masthead h2 {
-				font-size: 24px;
-			}
-			.projects-header h2 {
-				font-size: 42px;
-			}
-		}
-		@media screen and (min-width: 992px){
-			.masthead h1 {
-				font-size: 100px;
-			}
-			.masthead h2 {
-				font-size: 30px;
-			}
-		}
-	</style>
+        .jumbotron:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url(https://static.bootcss.com/www/assets/img/bs-docs-masthead-pattern.png) repeat center center;
+            opacity: .4;
+        }
+
+        .jumbotron {
+            position: relative;
+            padding: 40px 0;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
+            background: #020031;
+            background: -webkit-gradient(linear, left bottom, right top, color-stop(0, #020031), color-stop(100%, #6d3353));
+            background: -webkit-linear-gradient(45deg, #020031 0, #6d3353 100%);
+            background: -o-linear-gradient(45deg, #020031 0, #6d3353 100%);
+            background: linear-gradient(45deg, #020031 0, #6d3353 100%);
+            -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+            box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
+        }
+
+        .jumbotron a {
+            color: #fff;
+            color: rgba(255, 255, 255, .5);
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+
+        .masthead {
+            padding: 60px 0 80px;
+            margin-bottom: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .masthead h1 {
+            font-size: 60px;
+            line-height: 1;
+            letter-spacing: -2px;
+            font-weight: 700;
+        }
+
+        .masthead h2 {
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 1.25;
+        }
+
+        .masthead p {
+            font-size: 40px;
+            font-weight: 200;
+            line-height: 1.25;
+        }
+
+        .masthead .masthead-button-links {
+            margin-top: 30px;
+        }
+
+        .masthead-links {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .masthead-links li {
+            display: inline;
+            padding: 0 10px;
+            color: rgba(255, 255, 255, .25);
+        }
+
+        .bc-social {
+            padding: 15px 0;
+            text-align: center;
+            background-color: #f5f5f5;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .bc-social-buttons {
+            margin-left: 0;
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .bc-social-buttons li {
+            display: inline-block;
+            line-height: 1;
+            color: #555;
+        }
+
+        .bc-social-buttons li a {
+            color: #555;
+        }
+
+        .bc-social-buttons li .fa {
+            font-size: 18px;
+            margin-right: 3px;
+        }
+
+        .bc-social-buttons>li+li:before {
+            padding: 0 10px;
+            color: #ccc;
+            content: "|";
+        }
+
+        .page-header {
+            padding-bottom: 9px;
+            margin: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .projects-header {
+            width: 60%;
+            text-align: center;
+            margin: 60px 0 10px;
+            font-weight: 200;
+            margin-bottom: 40px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .projects-header h2 {
+            font-size: 30px;
+            letter-spacing: -1px;
+        }
+
+        .footer {
+            color: #777;
+            padding: 30px 0;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 70px;
+        }
+
+        hr {
+            height: 0;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        hr {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-bottom {
+            font-size: 13px;
+        }
+
+        .list-inline {
+            padding-left: 0;
+            margin-left: -5px;
+            list-style: none;
+        }
+
+        @media screen and (min-width: 768px) {
+            .masthead {
+                padding: 90px 0 110px;
+            }
+            .masthead h1 {
+                font-size: 90px;
+            }
+            .masthead h2 {
+                font-size: 24px;
+            }
+            .projects-header h2 {
+                font-size: 42px;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            .masthead h1 {
+                font-size: 100px;
+            }
+            .masthead h2 {
+                font-size: 30px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-	<div class="container">
-		<div class="navbar-header">
-			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand hidden-sm" href="">Bootstrap中文网</a>
-		</div>
-		<div class="navbar-collapse collapse" role="navigation">
-			<ul class="nav navbar-nav">
-				<li class="hidden-sm hidden-md"><a  >Bootstrap2中文文档</a></li>
-				<li><a  >Bootstrap3中文文档</a></li>
-				<li><a >Bootstrap4中文文档</a></li>
-				<li><a >Less 教程</a></li>
-				<li><a >jQuery API</a></li>
-				<li><a >网站实例</a></li>
-				<li><a >Bootstrap训练营</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right hidden-sm">
-				<li><a>关于</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="jumbotron masthead">
-	<div class="container">
-		<h1>Bootstrap</h1>
-		<h2>简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</h2>
-		<p class="masthead-button-links">
-			<a class="btn btn-lg btn-primary btn-shadow" >Bootstrap3中文文档(v3.3.7)</a>
-		</p>
-		<ul class="masthead-links">
-			<li>
-				<a >Bootstrap2中文文档(v2.3.2)</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="bc-social">
-	<div class="container">
-		<ul class="bc-social-buttons">
-			<li class="social-forum">
-				<a class="" >
-					<i class="fa fa-comments"></i> Bootstrap问答社区
-				</a>
-			</li>
-			<li class="social-weibo">
-				<a ><i class="fa fa-weibo"></i> 新浪微博：@Bootstrap中文网</a>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="container projects">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hidden-sm" href="">Bootstrap中文网</a>
+            </div>
+            <div class="navbar-collapse collapse" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li class="hidden-sm hidden-md">
+                        <a>Bootstrap2中文文档</a>
+                    </li>
+                    <li>
+                        <a>Bootstrap3中文文档</a>
+                    </li>
+                    <li>
+                        <a>Bootstrap4中文文档</a>
+                    </li>
+                    <li>
+                        <a>Less 教程</a>
+                    </li>
+                    <li>
+                        <a>jQuery API</a>
+                    </li>
+                    <li>
+                        <a>网站实例</a>
+                    </li>
+                    <li>
+                        <a>Bootstrap训练营</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right hidden-sm">
+                    <li>
+                        <a>关于</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron masthead">
+        <div class="container">
+            <h1>Bootstrap</h1>
+            <h2>简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</h2>
+            <p class="masthead-button-links">
+                <a class="btn btn-lg btn-primary btn-shadow">Bootstrap3中文文档(v3.3.7)</a>
+            </p>
+            <ul class="masthead-links">
+                <li>
+                    <a>Bootstrap2中文文档(v2.3.2)</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="bc-social">
+        <div class="container">
+            <ul class="bc-social-buttons">
+                <li class="social-forum">
+                    <a class="">
+                        <i class="fa fa-comments"></i> Bootstrap问答社区
+                    </a>
+                </li>
+                <li class="social-weibo">
+                    <a>
+                        <i class="fa fa-weibo"></i> 新浪微博：@Bootstrap中文网</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container projects">
 
-	<div class="projects-header page-header">
-		<h2>Bootstrap相关优质项目推荐</h2>
-		<p>这些项目或者是对Bootstrap进行了有益的补充，或者是基于Bootstrap开发的</p>
-	</div>
+        <div class="projects-header page-header">
+            <h2>Bootstrap相关优质项目推荐</h2>
+            <p>这些项目或者是对Bootstrap进行了有益的补充，或者是基于Bootstrap开发的</p>
+        </div>
 
-	<div class="row">
+        <div class="row">
 
-		<div class="col-sm-6 col-md-4 col-lg-3 ">
-			<div class="thumbnail" style="height: 336px;">
-				<a>
-					<img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" alt="Bootstrap 编码规范">
-				</a>
-				<div class="caption">
-					<h3>
-						<a >Bootstrap 编码规范<br><small>by @mdo</small></a>
-					</h3>
-					<p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
-				</div>
-			</div>
-		</div>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail" style="height: 336px;">
+                    <a>
+                        <img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859"
+                            alt="Bootstrap 编码规范">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a>Bootstrap 编码规范
+                                <br>
+                                <small>by @mdo</small>
+                            </a>
+                        </h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
 
-		<div class="col-sm-6 col-md-4 col-lg-3 ">
-			<div class="thumbnail" style="height: 336px;">
-				<a>
-					<img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" alt="Bootstrap 编码规范">
-				</a>
-				<div class="caption">
-					<h3>
-						<a >Bootstrap 编码规范<br><small>by @mdo</small></a>
-					</h3>
-					<p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-4 col-lg-3 ">
-			<div class="thumbnail" style="height: 336px;">
-				<a>
-					<img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" alt="Bootstrap 编码规范">
-				</a>
-				<div class="caption">
-					<h3>
-						<a >Bootstrap 编码规范<br><small>by @mdo</small></a>
-					</h3>
-					<p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-6 col-md-4 col-lg-3 ">
-			<div class="thumbnail" style="height: 336px;">
-				<a>
-					<img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" alt="Bootstrap 编码规范">
-				</a>
-				<div class="caption">
-					<h3>
-						<a >Bootstrap 编码规范<br><small>by @mdo</small></a>
-					</h3>
-					<p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<footer class="footer ">
-	<div class="container">
-		<div class="row footer-top">
-			<div class="col-md-6 col-lg-6">
-				<h4>
-					<img src="https://static.bootcss.com/www/assets/img/logo.png?1521019614859">
-				</h4>
-				<p>我们一直致力于为广大开发者提供更多的优质技术文档和辅助开发工具！</p>
-			</div>
-			<div class="col-md-6  col-lg-5 col-lg-offset-1">
-				<div class="row about">
-					<div class="col-sm-3">
-						<h4>关于</h4>
-						<ul class="list-unstyled">
-							<li><a href="/about/">关于我们</a></li>
-							<li><a href="/ad/">广告合作</a></li>
-							<li><a href="/links/">友情链接</a></li>
-							<li><a href="/hr/">招聘</a></li>
-						</ul>
-					</div>
-					<div class="col-sm-3">
-						<h4>联系方式</h4>
-						<ul class="list-unstyled">
-							<li><a >新浪微博</a></li>
-							<li><a >电子邮件</a></li>
-						</ul>
-					</div>
-					<div class="col-sm-4">
-						<h4>旗下网站</h4>
-						<ul class="list-unstyled">
-							<li><a >Laravel中文网</a></li>
-							<li><a >Ghost中国</a></li>
-							<li><a >BootCDN</a></li>
-							<li><a >Packagist中国镜像</a></li>
-							<li><a >燃腾教育</a></li>
-						</ul>
-					</div>
-					<div class="col-sm-2">
-						<h4>赞助商</h4>
-						<ul class="list-unstyled">
-							<li><a >又拍云</a></li>
-						</ul>
-					</div>
-				</div>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail" style="height: 336px;">
+                    <a>
+                        <img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859"
+                            alt="Bootstrap 编码规范">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a>Bootstrap 编码规范
+                                <br>
+                                <small>by @mdo</small>
+                            </a>
+                        </h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail" style="height: 336px;">
+                    <a>
+                        <img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859"
+                            alt="Bootstrap 编码规范">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a>Bootstrap 编码规范
+                                <br>
+                                <small>by @mdo</small>
+                            </a>
+                        </h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <div class="thumbnail" style="height: 336px;">
+                    <a>
+                        <img class="lazy" src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859" width="300" height="150" data-src="https://static.bootcss.com/www/assets/img/codeguide.png?1521019614859"
+                            alt="Bootstrap 编码规范">
+                    </a>
+                    <div class="caption">
+                        <h3>
+                            <a>Bootstrap 编码规范
+                                <br>
+                                <small>by @mdo</small>
+                            </a>
+                        </h3>
+                        <p>Bootstrap 编码规范：编写灵活、稳定、高质量的 HTML 和 CSS 代码的规范。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer ">
+        <div class="container">
+            <div class="row footer-top">
+                <div class="col-md-6 col-lg-6">
+                    <h4>
+                        <img src="https://static.bootcss.com/www/assets/img/logo.png?1521019614859">
+                    </h4>
+                    <p>我们一直致力于为广大开发者提供更多的优质技术文档和辅助开发工具！</p>
+                </div>
+                <div class="col-md-6  col-lg-5 col-lg-offset-1">
+                    <div class="row about">
+                        <div class="col-sm-3">
+                            <h4>关于</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="/about/">关于我们</a>
+                                </li>
+                                <li>
+                                    <a href="/ad/">广告合作</a>
+                                </li>
+                                <li>
+                                    <a href="/links/">友情链接</a>
+                                </li>
+                                <li>
+                                    <a href="/hr/">招聘</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-3">
+                            <h4>联系方式</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a>新浪微博</a>
+                                </li>
+                                <li>
+                                    <a>电子邮件</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4">
+                            <h4>旗下网站</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a>Laravel中文网</a>
+                                </li>
+                                <li>
+                                    <a>Ghost中国</a>
+                                </li>
+                                <li>
+                                    <a>BootCDN</a>
+                                </li>
+                                <li>
+                                    <a>Packagist中国镜像</a>
+                                </li>
+                                <li>
+                                    <a>燃腾教育</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <h4>赞助商</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a>又拍云</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
 
-			</div>
-		</div>
-		<hr>
-		<div class="row footer-bottom">
-			<ul class="list-inline text-center">
-				<li><a >京ICP备11008151号</a></li><li>京公网安备11010802014853</li>
-			</ul>
-		</div>
-	</div>
-</footer>
+                </div>
+            </div>
+            <hr>
+            <div class="row footer-bottom">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a>京ICP备11008151号</a>
+                    </li>
+                    <li>京公网安备11010802014853</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </body>
-<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
 </html>

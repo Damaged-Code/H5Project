@@ -16,7 +16,7 @@ class ToDoListRemove extends React.Component {
     render() {
         const data = this.props.data
         return (
-            <ul className="list">
+            <ul className="list">           
                 {data.map((val, key) => {
                     return (
                         <li key={key}>
@@ -46,7 +46,7 @@ class ToDoListInput extends React.Component {
     }
     commitData = e => {
         let input = this.refs.input,
-            data = this.props.data  
+            data = this.props.data
 
         data.push(input.value)
         this.props.onDataChange(data)
