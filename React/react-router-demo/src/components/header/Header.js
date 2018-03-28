@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../styles/Header.css'
 import HeaderNav from './HeaderNav';
 
 export default class Header extends Component {
@@ -10,7 +9,7 @@ export default class Header extends Component {
           <img src="https://security.ele.me/images/header_logo.png" alt=""/>
         </div>
         <HeaderNav></HeaderNav>
-      </header>
+        </header>
     );
   }
-} 
+}
