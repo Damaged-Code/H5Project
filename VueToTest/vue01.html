@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-<html lang = "en">
-<head>
-	<meta charset = "UTF-8">
-	<meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Title</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
-</head>
-<body>
-	<div id="app">
-		<h1 ref="title" @click="test">{{mess}}</h1>
-        <input type="text" v-model="mess">
-	</div>
-	<script>
-		new Vue({
-			el:'#app',
-			data:{
-				mess:'123'
-			},
-			created(){
+<html lang="en">
 
-			},
-			computed:{
-			    change(){
-                    return this.mess
-                }
-            },
-			mounted(){
-				(this.$refs.title).style.color = 'red';
-				console.log()
-			},
-			methods:{
-				test(){
-					this.mess = '11213'
-				}
-			}
-                })        
-	</script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Title</title>
+  <style>
+    #app {
+      width: 300px;
+      height: 500px;
+    }
+
+    .box1 {
+      width: 100%;
+      height: 100px;
+      background-color: red;
+    }
+
+    .box2 {
+      width: 100%;
+      height: 100%;
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class='box1'></div>
+    <div class='box2'></div>
+  </div>
+
 </body>
+
 </html>
