@@ -1,8 +1,19 @@
-
-.LinkList{
-  display: flex;
+.LinkList {
+    display: flex;
 }
 
-.LinkList li{
-  margin: 0 5px;
+.LinkList li {
+    width: auto;
+    font-size: 20px;
+    color: #acb6c1;
+    margin: 0px 30px;
+}
+
+.LinkList li a {
+    display: block;
+    color: #acb6c1;
+}
+
+.LinkActive {
+    color: #fff !important;
 }

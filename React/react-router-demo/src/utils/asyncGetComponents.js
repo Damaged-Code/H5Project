@@ -17,7 +17,7 @@ export default function asyncGetComponent (importComponent) {
     render() {
       const C = this.state.component
       return (
-        C ? <C {...this.props}/> : null
+        C ? <C {...this.props} /> : null
       )
     }
    }

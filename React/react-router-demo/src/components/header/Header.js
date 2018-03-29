@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import HeaderNav from './HeaderNav';
 import CSSModules from 'react-css-modules';
 import styles from '../../styles/Header.css';
-import classNames from 'classnames/bind';
  class Header extends Component {
   render() {
-    
     return (
       <header styleName='header'>
         <div styleName='logo'>

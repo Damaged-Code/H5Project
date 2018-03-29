@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import MyRouter from '../../router'
-import styles from '../../styles/Main.css';
+import styles from '../../styles/Main.css'
+import CSSModules from 'react-css-modules'
 
-export default class MainContent extends Component {
+class MainContent extends Component {
+  constructor(props) {
+    super(props)
+  }
+  componentDidMount() {}
   render() {
     return (
-        <main className={styles.main}>
-          <MyRouter />
-        </main>
-    );
+      <main styleName="main">
+        <MyRouter />
+      </main>
+    )
   }
 }
+export default CSSModules(MainContent, styles)
