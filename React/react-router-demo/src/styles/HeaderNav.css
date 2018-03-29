@@ -2,3 +2,7 @@
 .LinkList{
   display: flex;
 }
+
+.LinkList li{
+  margin: 0 5px;
+}

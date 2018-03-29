@@ -1,15 +1,34 @@
 import React, { Component } from 'react'
-import {  Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import Home from '../components/main/Home'
-import Announcement from '../components/main/Announcement'
+import asyncGetComponents from '../utils/asyncGetComponents'
 
+const routes = [
+  {
+    path: '/',
+    exact: true,
+    component: Home
+  },
+  {
+    path: '/announcement',
+    exact: false,
+    component: asyncGetComponents(() =>
+      import('../components/main/Announcement')
+    )
+  },
+  {
+    exact: true,
+    component: Home
+  }
+]
 export default class MyRouter extends Component {
   render() {
     return (
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/announcement" component={Announcement} />
-        </Switch>
+      <Switch>
+        {routes.map((route, index) => {
+          return <Route key={index} {...route} />
+        })}
+      </Switch>
     )
   }
 }
