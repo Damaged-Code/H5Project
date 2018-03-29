@@ -8,7 +8,6 @@ export default class HeaderNav extends Component {
       <nav>
         <ul className={styles.LinkList}>
           <li>
-            TEST
               <Link to='/'>首页</Link>
             </li>
             <li>上报漏洞/情报</li>

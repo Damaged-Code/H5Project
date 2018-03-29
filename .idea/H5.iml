@@ -8,6 +8,8 @@
       <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/api/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/React/my-app/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/React/react-router-demo/node_modules" />
+      <excludeFolder url="file://$MODULE_DIR$/React/redux-dome/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/YoHo/node_modules" />
       <excludeFolder url="file://$MODULE_DIR$/haidilao/test" />
       <excludeFolder url="file://$MODULE_DIR$/heroesEditor/dist" />
