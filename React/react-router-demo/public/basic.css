@@ -1,24 +1,29 @@
-html{
+html {
   width: 100%;
   height: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   width: 100%;
   height: 100%;
-    background-image: url(https://security.ele.me/images/bg.jpg);
-    color: white;
-    font-family: "微软雅黑", arial;
+  background-image: url(https://security.ele.me/images/bg.jpg);
+  color: white;
+  font-family: '微软雅黑', arial;
+  padding-top: 84px;
 }
 
 .clearfix:after {
-    content: '';
-    display: block;
-    height: 0;
-    clear: both;
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
 }
 
 a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }

@@ -13,9 +13,9 @@ class MainTitle extends Component {
 
   render() {
     return (
-      <div>
-        {this.state.title}
-        <img src={this.state.picUrl} alt="" />
+      <div styleName="title">
+        <p styleName="title-text"> {this.state.title}</p>
+        <img styleName="title-img" src={this.state.picUrl} alt="" />
       </div>
     )
   }
