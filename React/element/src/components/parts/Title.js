@@ -13,6 +13,6 @@ export default class Title extends Component {
   }
 
   render() {
-    return <div>{this.state.text}</div>
+    return <div className="title">{this.state.text}</div>
   }
 }
