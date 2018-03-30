@@ -164,6 +164,10 @@ body {
   background-color: #999;
   margin-left: 3.466667vw;
 }
+.el-home .el-home-main .shop-lis a {
+  display: flex;
+  flex-wrap: wrap;
+}
 .el-home .el-home-footer {
   position: fixed;
   bottom: 0;
