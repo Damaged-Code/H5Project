@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './styles/App.css'
 import { BrowserRouter, HashRouter } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
+import MyRouter from './router'
 
 const history = createBrowserHistory()
 
@@ -11,7 +12,9 @@ class App extends Component {
   render() {
     return (
       <Router history={history}>
-        <div styleName="App" />
+        <div styleName="App">
+          <MyRouter />
+        </div>
       </Router>
     )
   }
