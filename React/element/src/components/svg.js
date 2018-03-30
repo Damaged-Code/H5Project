@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 export default class Svg extends Component {
-  static PropTypes = {
-    icon: PropTypes.string.isRequired
+  static propTypes = {
+    icon: propTypes.string.isRequired
   }
   constructor(props) {
     super(props)

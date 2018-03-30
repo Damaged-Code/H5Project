@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Svg from './svg'
+import Svg from './Svg'
 import classNames from 'classnames'
 
 const routes = [
@@ -45,6 +45,7 @@ export default class Footer extends Component {
     }
   }
   LinkActiveChange = e => {
+    e.stopPropagation()
     let tag = e.target.parentNode,
       tagIndex = +tag.getAttribute('data-index')
 
@@ -59,7 +60,7 @@ export default class Footer extends Component {
   }
   render() {
     return (
-      <footer className="el-footer">
+      <footer className="el-home-footer">
         <ul>
           {this.state.routes.map((route, index) => {
             return (
