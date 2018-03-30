@@ -527,7 +527,10 @@ body {
 html {
     font-size: 625%;
 }
-
+body,html{
+  width: 100%;
+  height: 100%;
+}
 ol,
 ul {
     list-style: none;
@@ -553,22 +556,6 @@ table {
 
 a {
     text-decoration: none;
-}
-
-@font-face {
-    font-family: 'iconfont';
-    /* project id 498038 */
-    src: url('//at.alicdn.com/t/font_498038_uyjitsnlqbocg14i.eot');
-    src: url('//at.alicdn.com/t/font_498038_uyjitsnlqbocg14i.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_498038_uyjitsnlqbocg14i.woff') format('woff'), url('//at.alicdn.com/t/font_498038_uyjitsnlqbocg14i.ttf') format('truetype'), url('//at.alicdn.com/t/font_498038_uyjitsnlqbocg14i.svg#iconfont') format('svg');
-}
-
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: .16rem;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: .002rem;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 .clearfix:after {

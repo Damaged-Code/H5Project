@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <Router history={history}>
-        <div styleName="App">
+        <div className="App">
           124
           <MyRouter />
         </div>

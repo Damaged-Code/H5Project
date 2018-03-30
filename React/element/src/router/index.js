@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import Home from '../components/Home'
 
 const routes = [
   {
     path: '/',
     exact: true,
-    component: null
+    component: Home
   },
   {
     exact: true,
-    component: null
+    component: Home
   }
 ]
 export default class MyRouter extends Component {
