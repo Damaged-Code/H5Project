@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Svg from './Svg'
+import Svg from '../Svg'
 import classNames from 'classnames'
 
 const routes = [

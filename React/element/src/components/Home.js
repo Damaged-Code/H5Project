@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Footer from './Footer'
-import Header from './Header'
+import Footer from './home/Footer'
+import Header from './home/Header'
 
 export default class Home extends Component {
   constructor(props) {
@@ -11,6 +11,7 @@ export default class Home extends Component {
     return (
       <div>
         <Header />
+
         <Footer />
       </div>
     )

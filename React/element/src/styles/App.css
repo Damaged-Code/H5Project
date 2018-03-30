@@ -1,19 +1,8 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: #f8f4f4;
-}
-@font-face {
-  font-family: 'iconfont';
-  /* project id 498038 */
-  src: url('//at.alicdn.com/t/font_498038_7f3tumxbs05dn29.eot');
-  src: url('//at.alicdn.com/t/font_498038_7f3tumxbs05dn29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_498038_7f3tumxbs05dn29.woff') format('woff'), url('//at.alicdn.com/t/font_498038_7f3tumxbs05dn29.ttf') format('truetype'), url('//at.alicdn.com/t/font_498038_7f3tumxbs05dn29.svg#iconfont') format('svg');
-}
-.iconfont {
-  font-family: 'iconfont' !important;
-  font-size: 0.16rem;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.002rem;
-  -moz-osx-font-smoothing: grayscale;
 }
 .icon {
   width: 1em;
@@ -42,6 +31,112 @@ body {
 .el-home-header .location .icon {
   font-size: .19rem;
 }
+.el-home-header .search {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+}
+.el-home-header .search .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2vw 3.733333vw;
+  margin: -0.133333vw 0;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+}
+.el-home-header .search .link a {
+  display: flex;
+  width: 100%;
+  height: .48rem;
+  height: 9.6vw;
+  justify-content: center;
+  align-items: center;
+  border-radius: .266667vw;
+  background: #fff;
+  color: #999;
+  font-size: .16rem;
+}
+.el-home-header .search .link a span {
+  margin-left: .05rem;
+}
+.el-home-header .download {
+  height: 1.05rem;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+}
+.el-home-header .download img {
+  width: 100%;
+}
+.el-home-header .nav-link {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+}
+.el-home-header .nav-link .link {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.el-home-header .nav-link .link a {
+  display: flex;
+  margin-top: 2.933333vw;
+  flex-direction: column;
+  text-align: center;
+  width: .75rem;
+  align-items: center;
+}
+.el-home-header .nav-link .link a img {
+  width: 12vw;
+  height: 12vw;
+}
+.el-home-header .nav-link .link a p {
+  margin-top: 1.333333vw;
+  color: #666;
+  font-size: .13rem;
+}
+.el-home-header .nav-link .link .lint-btn {
+  width: 100%;
+  height: .14rem;
+}
+.el-home-header .advertise {
+  margin-bottom: 2.133333vw;
+  background-color: #fff;
+  padding: 0 2.666667vw;
+}
+.el-home-header .advertise .content {
+  display: flex;
+  background: linear-gradient(0deg, #f4f4f4 5%, #fafafa 95%);
+  margin-bottom: .8vw;
+  justify-content: space-between;
+  align-items: center;
+}
+.el-home-header .advertise .content .text {
+  height: 29.333333vw;
+  padding: 3.2vw 0 0 4vw;
+}
+.el-home-header .advertise .content .text p:nth-of-type(1) {
+  font-size: .18rem;
+  font-weight: 700;
+  margin-bottom: 1.333333vw;
+  color: #333;
+}
+.el-home-header .advertise .content .text p:nth-of-type(2) {
+  font-size: .123rem;
+  color: #777;
+  margin-bottom: 2.4vw;
+}
+.el-home-header .advertise .content .text p:nth-of-type(3) {
+  font-size: .16rem;
+  color: #af8260;
+  font-weight: 700;
+}
+.el-home-header .advertise .content img {
+  top: 2.4vw;
+  right: 3.733333vw;
+  width: 37.6vw;
+  height: 25.066667vw;
+}
 .el-home-footer {
   position: fixed;
   bottom: 0;
@@ -50,6 +145,7 @@ body {
   width: 100%;
   background-color: #fff;
   box-shadow: 0 -0.266667vw 0.533333vw rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 .el-home-footer ul {
   display: flex;
