@@ -13,6 +13,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <div styleName="App">
+          124
           <MyRouter />
         </div>
       </Router>

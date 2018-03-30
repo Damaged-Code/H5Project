@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "element-react": "^1.4.10",
+    "element-theme-default": "^1.4.13",
     "less": "^3.0.1",
     "less-loader": "^4.1.0",
     "prop-types": "^15.6.1",
