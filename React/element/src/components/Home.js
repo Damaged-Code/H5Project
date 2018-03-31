@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import Footer from './home/Footer'
 import Header from './home/Header'
 import Main from './home/Main'
+import Search from './header/Search'
+import Download from './header/Download'
+import NavLink from './header/NavLink'
+import Advertise from './header/Advertise'
 
 export default class Home extends Component {
   constructor(props) {
@@ -12,8 +15,11 @@ export default class Home extends Component {
     return (
       <div className="el-home">
         <Header />
+        <Search />
+        <Download />
+        <NavLink />
+        <Advertise />
         <Main />
-        <Footer />
       </div>
     )
   }

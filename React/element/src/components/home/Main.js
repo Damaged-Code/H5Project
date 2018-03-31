@@ -11,6 +11,7 @@ export default class Main extends Component {
   render() {
     return (
       <main className="el-home-main">
+        
         <Title text="推荐商家" />
         <ShopList />
       </main>

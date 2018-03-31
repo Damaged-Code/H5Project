@@ -10,15 +10,15 @@ const routes = [
     component: '',
     text: '外卖',
     icon: 'icon-evil',
-    active: true
+    active: true,
   },
   {
-    path: '/',
+    path: '/find',
     exact: false,
     component: '',
     text: '发现',
     icon: 'icon-faxian',
-    active: false
+    active: false,
   },
   {
     path: '/',
@@ -26,7 +26,7 @@ const routes = [
     component: '',
     text: '订单',
     icon: 'icon-dingdanye',
-    active: false
+    active: false,
   },
   {
     path: '/',
@@ -34,14 +34,14 @@ const routes = [
     component: '',
     text: '我的',
     icon: 'icon-tubiaolunkuo-',
-    active: false
-  }
+    active: false,
+  },
 ]
 export default class Footer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      routes: routes
+      routes: routes,
     }
   }
   LinkActiveChange = e => {
