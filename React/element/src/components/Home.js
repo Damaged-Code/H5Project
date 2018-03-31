@@ -20,6 +20,7 @@ export default class Home extends Component {
         <NavLink />
         <Advertise />
         <Main />
+        <div className="bottom" />
       </div>
     )
   }

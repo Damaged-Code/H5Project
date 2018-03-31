@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import Svg from '../Svg'
 import classNames from 'classnames'
 
@@ -16,7 +16,7 @@ const routes = [
     path: {
       pathname: '/find',
     },
-    exact: false,
+    exact: true,
     component: '',
     text: '发现',
     icon: 'icon-faxian',
@@ -24,7 +24,7 @@ const routes = [
   },
   {
     path: '/order',
-    exact: false,
+    exact: true,
     component: '',
     text: '订单',
     icon: 'icon-dingdanye',
@@ -32,7 +32,7 @@ const routes = [
   },
   {
     path: '/user',
-    exact: false,
+    exact: true,
     component: '',
     text: '我的',
     icon: 'icon-tubiaolunkuo-',
@@ -67,16 +67,10 @@ export default class Footer extends Component {
           {this.state.routes.map((route, index) => {
             return (
               <li key={index}>
-                <Link
-                  className={classNames({ active: route.active })}
-                  to={route.path}
-                  component={route.component}
-                  onClick={this.LinkActiveChange}
-                  data-index={index}
-                >
+                <NavLink activeClassName="active" to={route.path}>
                   <Svg icon={route.icon} />
                   <p>{route.text}</p>
-                </Link>
+                </NavLink>
               </li>
             )
           })}

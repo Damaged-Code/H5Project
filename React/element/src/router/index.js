@@ -13,17 +13,17 @@ const routes = [
   },
   {
     path: '/find',
-    exact: false,
+    exact: true,
     component: Find,
   },
   {
     path: '/order',
-    exact: false,
+    exact: true,
     component: Order,
   },
   {
     path: '/user',
-    exact: false,
+    exact: true,
     component: User,
   },
   {
