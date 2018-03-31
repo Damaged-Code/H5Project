@@ -13,7 +13,9 @@ const routes = [
     active: true,
   },
   {
-    path: '/find',
+    path: {
+      pathname: '/find',
+    },
     exact: false,
     component: '',
     text: '发现',
@@ -21,7 +23,7 @@ const routes = [
     active: false,
   },
   {
-    path: '/',
+    path: '/order',
     exact: false,
     component: '',
     text: '订单',
@@ -29,7 +31,7 @@ const routes = [
     active: false,
   },
   {
-    path: '/',
+    path: '/user',
     exact: false,
     component: '',
     text: '我的',

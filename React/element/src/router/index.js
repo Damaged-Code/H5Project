@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../components/Home'
 import Find from '../components/Find'
+import Order from '../components/Order'
+import User from '../components/User'
 
 const routes = [
   {
@@ -13,6 +15,16 @@ const routes = [
     path: '/find',
     exact: false,
     component: Find,
+  },
+  {
+    path: '/order',
+    exact: false,
+    component: Order,
+  },
+  {
+    path: '/user',
+    exact: false,
+    component: User,
   },
   {
     exact: true,

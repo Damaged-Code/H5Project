@@ -323,7 +323,7 @@ body {
   margin-right: 0.8vw;
 }
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-down section:nth-of-type(2) {
-  font-size: .1rem;
+  font-size: 0.1rem;
   justify-content: space-between;
   width: 100%;
 }
@@ -339,7 +339,7 @@ body {
   line-height: 4.8vw;
 }
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-down section:nth-of-type(2) div div span {
-  font-size: .1rem;
+  font-size: 0.1rem;
   color: #999;
 }
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-down section:nth-of-type(2) div div span:nth-of-type(1) {
@@ -357,7 +357,7 @@ body {
   z-index: 1;
   height: 7.466667vw;
   width: 7.466667vw;
-  font-size: .28rem;
+  font-size: 0.28rem;
   color: #fff;
   display: flex;
   align-items: center;
@@ -368,11 +368,11 @@ body {
 }
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-down section:nth-of-type(2) div:nth-of-type(2) {
   color: #999;
-  font-size: .1rem;
+  font-size: 0.1rem;
 }
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-down section:nth-of-type(2) div:nth-of-type(2) img {
   width: 1.733333vw;
-  opacity: .9;
+  opacity: 0.9;
   margin-left: 1.066667vw;
   transition: all 0.3s ease-in-out;
   transform: rotate(0deg);
@@ -410,10 +410,13 @@ body {
 .el-home-footer .active {
   color: #0089dc;
 }
-.el-find .head-title {
+.head-title {
   height: 11.733333vw;
 }
-.el-find .head-title .content {
+.head-title a {
+  color: white;
+}
+.head-title .content {
   position: fixed;
   top: 0;
   left: 0;
@@ -425,9 +428,9 @@ body {
   height: 1.173333rem;
   height: 11.733333vw;
   color: #fff;
-  font-size: .24rem;
+  font-size: 0.24rem;
 }
-.el-find .head-title .content h1 {
+.head-title .content h1 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -440,4 +443,279 @@ body {
   font-size: 1em;
   line-height: 11.733333vw;
   transform: translateX(-50%);
+}
+.el-find {
+  background-color: #f3efef;
+}
+.el-find .advert {
+  margin-bottom: 0.02rem;
+}
+.el-find .advert img {
+  width: 100%;
+}
+.el-find .adverts-box {
+  background-color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.08rem;
+}
+.el-find .adverts-box section p {
+  line-height: 1.2;
+  font-size: 0.16rem;
+  margin-bottom: 1.6vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #999;
+}
+.el-find .adverts-box section p:nth-of-type(1) {
+  color: #e88f28;
+}
+.el-find .adverts-box section p:nth-of-type(2) {
+  font-size: 0.12rem;
+}
+.el-find .adverts-box section:nth-of-type(1) {
+  width: fit-content;
+  border-right: 1px solid #ededed;
+  height: 42.666667vw;
+  padding: 5.866667vw 2.933333vw 1.6vw 4.266667vw;
+  border-bottom: 1px solid #ededed;
+}
+.el-find .adverts-box section:nth-of-type(1) a {
+  height: 100%;
+  align-items: flex-end;
+}
+.el-find .adverts-box section:nth-of-type(1) div {
+  max-width: 30vw;
+  align-self: flex-start;
+}
+.el-find .adverts-box section:nth-of-type(1) img {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 20vw;
+}
+.el-find .adverts-box section:nth-of-type(2) {
+  width: 50%;
+}
+.el-find .adverts-box section:nth-of-type(2) a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 21.333333vw;
+  padding: 0 4vw;
+  border-bottom: 1px solid #ededed;
+}
+.el-find .adverts-box section:nth-of-type(2) a img {
+  width: 12vw;
+}
+.el-find .adverts-box section:nth-of-type(3) {
+  display: flex;
+  width: 100%;
+}
+.el-find .adverts-box section:nth-of-type(3) a {
+  border-right: 1px solid #ededed;
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 21.333333vw;
+  padding: 0 4vw;
+}
+.el-find .adverts-box section:nth-of-type(3) a img {
+  width: 12vw;
+}
+.el-find .adverts-box section:nth-of-type(3) a:nth-of-type(1) {
+  margin-left: -0.01rem;
+}
+.el-find .adverts-box section:nth-of-type(3) a:nth-of-type(2) {
+  border-right: 0;
+}
+.el-find .main {
+  padding-bottom: 0.5rem;
+}
+.el-find .main .bottom {
+  width: 100%;
+  height: 0.5rem;
+}
+.el-find .main .head-title {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5.2vw;
+}
+.el-find .main .head-title .title {
+  text-align: center;
+  font-size: 0.24rem;
+  font-weight: 700;
+  color: #333;
+}
+.el-find .main .head-title span {
+  display: inline-block;
+  margin: 2.133333vw 0.933333vw 1.733333vw;
+  border: 1px solid #333;
+  width: 4vw;
+  height: 0;
+  position: relative;
+}
+.el-find .main .head-title span::after {
+  position: absolute;
+  top: -0.666667vw;
+  content: '';
+  background: #333;
+  height: 1.333333vw;
+  width: 1.333333vw;
+  border-radius: 50%;
+}
+.el-find .main .head-title .icon {
+  font-size: 0.24rem;
+}
+.el-find .main .head-title .left:after {
+  right: -0.666667vw;
+}
+.el-find .main .head-title .right:after {
+  left: -0.666667vw;
+}
+.el-find .main .present-box {
+  background-color: #fff;
+  display: flex;
+  padding: 3.2vw 0 4vw 4vw;
+  white-space: nowrap;
+}
+.el-find .main .present-box a {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  width: 29.6vw;
+  margin-right: 1.6vw;
+}
+.el-find .main .present-box a img {
+  width: 33.2vw;
+  height: 29.333333vw;
+  margin-bottom: 1.533333vw;
+}
+.el-find .main .present-box a .discount {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.14rem;
+  color: #fff;
+  background: #413d3c;
+  padding: 0.666667vw;
+}
+.el-find .main .present-box a .food-info {
+  height: 6.4vw;
+  line-height: 6.4vw;
+}
+.el-find .main .present-box a .food-info .food-name {
+  font-size: 0.16rem;
+  color: #333;
+  margin-bottom: 1.333333vw;
+}
+.el-find .main .present-box a .food-info .price {
+  font-size: 0.16rem;
+  height: 4.8vw;
+  line-height: 4.8vw;
+  color: #ff5339;
+  margin-right: 0.933333vw;
+  max-width: 13.333333vw;
+  display: inline-block;
+  vertical-align: middle;
+}
+.el-find .main .present-box a .original-price {
+  font-size: 0.12rem;
+  color: #aaa;
+  max-width: 10.666667vw;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.05rem;
+}
+.el-find .main .more {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  padding-bottom: 0.2rem;
+}
+.el-user .login {
+  display: flex;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  padding: 6.666667vw 4vw;
+  color: #fff;
+  align-items: center;
+}
+.el-user .photo {
+  display: flex;
+  flex-shrink: 0;
+  font-size: 0.5rem;
+  line-height: 16vw;
+  border-radius: 50%;
+  background: #fff;
+  vertical-align: middle;
+  width: 16vw;
+  height: 16vw;
+  justify-content: center;
+  align-items: center;
+}
+.el-user .info {
+  overflow: hidden;
+  margin-left: 4.8vw;
+  flex-grow: 1;
+}
+.el-user .info p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.el-user .info p:nth-of-type(1) {
+  font-size: 0.23rem;
+  margin-bottom: 2.133333vw;
+  font-weight: 700;
+}
+.el-my-order {
+  background-color: #f9f9f9;
+}
+.el-my-order .main {
+  height: 100%;
+}
+.el-my-order .main .no-user {
+  margin-top: 26.666667vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.el-my-order .main .no-user .bottom {
+  width: 100%;
+  height: 2rem;
+}
+.el-my-order .main .no-user img {
+  display: block;
+  width: 53.333333vw;
+}
+.el-my-order .main .no-user h3 {
+  margin: 3.333333vw 0 2.666667vw;
+  color: #6a6a6a;
+  font-weight: 400;
+  font-size: 0.24rem;
+}
+.el-my-order .main .no-user a {
+  display: block;
+}
+.el-my-order .main .no-user a button {
+  padding: 2.666667vw;
+  min-width: 32vw;
+  border: none;
+  border-radius: 0.533333vw;
+  background-color: #56d176;
+  color: #fff;
+  text-align: center;
+  font-family: inherit;
+}
+.ui-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
