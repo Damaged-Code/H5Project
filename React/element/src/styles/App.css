@@ -662,6 +662,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+.el-user a {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  color: #fff;
+}
 .el-user .info {
   overflow: hidden;
   margin-left: 4.8vw;
@@ -774,6 +780,86 @@ body {
   color: #fff;
   text-align: center;
   font-family: inherit;
+}
+.el-search .search-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  position: relative;
+}
+.el-search .search-head a {
+  display: block;
+}
+.el-search .search-head .back {
+  width: 9.333333vw;
+  height: 9.333333vw;
+  padding: 1.333333vw 1.333333vw 1.333333vw 0;
+}
+.el-search .search-head .back .icon {
+  width: 8.333333vw;
+  height: 8.333333vw;
+  padding: 0 1.333333vw 1.333333vw 0;
+  fill: #999;
+}
+.el-search .search-head .el-input {
+  flex-grow: 1;
+  padding: 2.933333vw 2.933333vw 2.933333vw 0;
+  margin-left: 2.933333vw;
+  background-color: #fff;
+  z-index: 101;
+  display: flex;
+  justify-content: space-between;
+}
+.el-search .search-head .el-input .icon {
+  width: 2.933333vw;
+  height: 2.933333vw;
+  position: absolute;
+  top: 5.333333vw;
+  left: 2.933333vw;
+}
+.el-search .search-head .el-input input {
+  flex-grow: 1;
+  border-radius: 0.266667vw;
+  -webkit-appearance: none;
+  background-color: #f8f8f8;
+  padding: 1.733333vw 4vw 1.733333vw 8.8vw;
+  font-size: 0.12rem;
+  color: #666;
+  border: 0;
+}
+.el-search .search-head .el-input button {
+  outline: none;
+  color: #333;
+  font-size: 0.16rem;
+  background: #fff;
+  font-weight: 700;
+  margin-left: 2.933333vw;
+  border: 0;
+}
+.el-search .search-history .search-list {
+  margin-top: 4vw;
+}
+.el-search .search-history .search-list header {
+  display: flex;
+  justify-content: space-between;
+  padding: 2vw 3.333333vw;
+  color: #666;
+  font-weight: 700;
+}
+.el-search .search-history .search-list .list {
+  padding: 0 3.333333vw 3.333333vw;
+}
+.el-search .search-history .search-list .list button {
+  display: inline-block;
+  border-radius: 0.666667vw;
+  padding: 2vw 2.666667vw;
+  font-size: 0.16rem;
+  margin-right: 3.333333vw;
+  margin-top: 3.333333vw;
+  color: #666;
+  background-color: #f7f7f7;
+  border: 0;
 }
 .ui-ellipsis {
   overflow: hidden;

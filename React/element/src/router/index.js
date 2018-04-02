@@ -4,6 +4,8 @@ import Home from '../components/Home'
 import Find from '../components/Find'
 import Order from '../components/Order'
 import User from '../components/User'
+import Search from '../components/Search'
+import Login from '../components/Login'
 
 const routes = [
   {
@@ -25,6 +27,16 @@ const routes = [
     path: '/user',
     exact: true,
     component: User,
+  },
+  {
+    path: '/search',
+    exact: true,
+    component: Search,
+  },
+  {
+    path: '/login',
+    exact: true,
+    component: Login,
   },
   {
     exact: true,

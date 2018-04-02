@@ -4,7 +4,6 @@ import { BrowserRouter, HashRouter } from 'react-router-dom'
 import createBrowserHistory from 'history/createBrowserHistory'
 import MyRouter from './router'
 import 'element-theme-default'
-import Footer from './components/home/Footer'
 
 const history = createBrowserHistory()
 
@@ -16,7 +15,6 @@ class App extends Component {
       <Router history={history}>
         <div>
           <MyRouter />
-          <Footer />
         </div>
       </Router>
     )

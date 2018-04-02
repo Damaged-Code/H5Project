@@ -7,7 +7,7 @@ export default class Search extends Component {
     return (
       <div className="search">
         <div className="link">
-          <Link to="/">
+          <Link to="/search">
             <Svg icon="icon-sousuo1" />
             <span>搜索饿了么商家、商品名称</span>
           </Link>

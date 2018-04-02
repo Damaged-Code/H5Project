@@ -3,6 +3,7 @@ import HeadTitle from './parts/HeadTitle'
 import Advert from './parts/Advert'
 import AdvertsBox from './parts/AdvertsBox'
 import Main from './find/Main'
+import Footer from './home/Footer'
 
 const boxes = [
   [
@@ -60,6 +61,7 @@ export default class Find extends Component {
           })}
         </section>
         <Main />
+        <Footer />
       </div>
     )
   }

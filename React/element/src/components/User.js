@@ -3,6 +3,7 @@ import HeadTitle from './parts/HeadTitle'
 import Login from './user/Login'
 import ManageAction from './user/ManageAction'
 import ManageList from './user/ManageList'
+import Footer from './home/Footer'
 
 const manageAction = [
   {
@@ -50,6 +51,7 @@ export default class User extends Component {
             )
           })}
         </main>
+        <Footer />
       </div>
     )
   }

@@ -5,6 +5,7 @@ import Search from './header/Search'
 import Download from './header/Download'
 import NavLink from './header/NavLink'
 import Advertise from './header/Advertise'
+import Footer from './home/Footer'
 
 export default class Home extends Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export default class Home extends Component {
         <Advertise />
         <Main />
         <div className="bottom" />
+        <Footer />
       </div>
     )
   }

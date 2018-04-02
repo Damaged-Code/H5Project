@@ -23,18 +23,21 @@ export default class extends Component {
         <span className="photo">
           <Svg icon={this.state.user.photo} />
         </span>
-        <div className="info">
-          <p className="name">{this.state.user.name}</p>
-          <p>
-            <span>
-              <Svg icon={this.state.user.icon} />
-              {this.state.user.desc}
-            </span>
-          </p>
-        </div>
-        <span>
-          <Svg icon={this.state.user.direction} />
-        </span>
+        <Link to="/login">
+          <div className="info">
+            <p className="name">{this.state.user.name}</p>
+            <p>
+              <span>
+                <Svg icon={this.state.user.icon} />
+                {this.state.user.desc}
+              </span>
+            </p>
+          </div>
+
+          <span>
+            <Svg icon={this.state.user.direction} />
+          </span>
+        </Link>
       </section>
     )
   }

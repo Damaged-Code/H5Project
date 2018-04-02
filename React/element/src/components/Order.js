@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import HeadTitle from './parts/HeadTitle'
 import NoUser from './order/NoUser'
+import Footer from './home/Footer'
 
 export default class Order extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Order extends Component {
         <main className="main">
           <NoUser />
         </main>
+        <Footer />
       </div>
     )
   }
