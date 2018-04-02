@@ -7,8 +7,9 @@ let result = 0,
   body = 0
 
 async function GetLogin(req, res, next) {
-  username = req.body.username
-  password = req.body.password
+  console.log(req.params, req.query)
+  /* username = req.params.username
+  password = req.params.password
   result = await user.find({ username: username, password: password })
   if (JSON.stringify(result) != '[]') {
     res.json({
@@ -18,7 +19,7 @@ async function GetLogin(req, res, next) {
     res.json({
       data: 0,
     })
-  }
+  } */
 }
 
 module.exports = {

@@ -2,11 +2,14 @@ import React, { Component } from 'react'
 import HeadTitle from './parts/HeadTitle'
 import NoUser from './order/NoUser'
 import Footer from './home/Footer'
-import localStorage from 'localstorage'
+import { LocalStorage } from '../utils/storage'
 
-const user = new localStorage('user')
-
-let info = 0
+let info = {
+  imgUrl:
+    'https://fuss10.elemecdn.com/d/60/70008646170d1f654e926a2aaa3afpng.png',
+  text: '登录后查看外卖订单',
+  hasUser: false,
+}
 export default class Order extends Component {
   constructor(props) {
     super(props)
@@ -15,7 +18,7 @@ export default class Order extends Component {
     }
   }
   componentWillMount() {
-    if (user.get('user').length > 1) {
+    if (LocalStorage.get('user')) {
       info = {
         imgUrl:
           'https://fuss10.elemecdn.com/8/c8/bbe5984003cb26fc7b445a4a15195png.png',
@@ -34,7 +37,7 @@ export default class Order extends Component {
           <HeadTitle text="我的订单" />
         </header>
         <main className="main">
-          {this.state.hasUser ? <NoUser info={info} /> : <NoUser />}
+          <NoUser info={info} />
         </main>
         <div className="bottom" />
         <Footer />

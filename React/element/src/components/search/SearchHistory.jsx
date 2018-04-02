@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+let list = ['包子', '粥', '寿司', '沙拉', '凉皮', '绿茶', '披萨', '汉堡']
+
 export default class SearchHistory extends Component {
   render() {
     return (
@@ -8,7 +10,7 @@ export default class SearchHistory extends Component {
           <section className="search-list">
             <header>热门搜索</header>
             <section className="list">
-              <button>包子</button>
+              {list.map((val, index) => <button key={index}>{val}</button>)}
             </section>
           </section>
         </div>
