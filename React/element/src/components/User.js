@@ -4,7 +4,9 @@ import Login from './user/Login'
 import ManageAction from './user/ManageAction'
 import ManageList from './user/ManageList'
 import Footer from './home/Footer'
+import localStorage from 'localstorage'
 
+const user = new localStorage('user')
 const manageAction = [
   {
     icon: 'icon-jinbi',
@@ -27,30 +29,56 @@ const manageList = [
   ],
   [{ icon: 'icon-diannao', text: '我的地址', direction: 'icon-jiantouyou' }],
 ]
+let userInfo = {
+  photo: 'icon-yonghuguanli',
+  name: '',
+  icon: 'icon-shouji',
+  desc: '',
+  direction: 'icon-jiantouyou',
+}
 export default class User extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      hasUser: false,
+    }
+  }
+  componentWillMount() {
+    if (user.get('user').length > 1) {
+      let info = user.get('user')[1],
+        userStr = info.username.split('')
+      userInfo.name = userInfo.desc =
+        userStr[0] + '***' + userStr[userStr.length - 1]
+      this.setState({
+        hasUser: true,
+      })
+    }
+  }
   render() {
     return (
-      <div className="el-user">
-        <header>
-          <HeadTitle text="我的" />
-        </header>
-        <Login />
-        <section className="manage-action">
-          {manageAction.map((box, index) => {
-            return <ManageAction box={box} key={index} />
-          })}
-        </section>
-        <main className="main">
-          {manageList.map((tag, index) => {
-            return (
-              <section className="list" key={index}>
-                {tag.map((list, index) => {
-                  return <ManageList key={index} list={list} />
-                })}
-              </section>
-            )
-          })}
-        </main>
+      <div className="el-user-main">
+        <div className="el-user">
+          <header>
+            <HeadTitle text="我的" />
+          </header>
+          {this.state.hasUser ? <Login user={userInfo} /> : <Login />}
+          <section className="manage-action">
+            {manageAction.map((box, index) => {
+              return <ManageAction box={box} key={index} />
+            })}
+          </section>
+          <main className="main">
+            {manageList.map((tag, index) => {
+              return (
+                <section className="list" key={index}>
+                  {tag.map((list, index) => {
+                    return <ManageList key={index} list={list} />
+                  })}
+                </section>
+              )
+            })}
+          </main>
+        </div>
         <Footer />
       </div>
     )

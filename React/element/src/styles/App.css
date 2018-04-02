@@ -4,6 +4,12 @@
 body {
   overflow-x: hidden;
 }
+#root {
+  height: 100%;
+}
+.App {
+  height: 100%;
+}
 .icon {
   width: 1em;
   height: 1em;
@@ -396,15 +402,15 @@ body {
   justify-content: space-around;
   align-items: center;
 }
-.el-home-footer a {
+.el-home-footer ul a {
   color: #8e8e93;
   font-size: 0.13rem;
 }
-.el-home-footer a .icon {
+.el-home-footer ul a .icon {
   font-size: 0.16rem;
   line-height: 0;
 }
-.el-home-footer a p {
+.el-home-footer ul p {
   margin-top: 0.05rem;
 }
 .el-home-footer .active {
@@ -639,8 +645,12 @@ body {
   color: #999;
   padding-bottom: 0.2rem;
 }
+.el-user-main {
+  height: 100%;
+}
 .el-user {
   background-color: #f9f9f9;
+  height: 100%;
 }
 .el-user .login {
   display: flex;
@@ -743,6 +753,9 @@ body {
 }
 .el-my-order {
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .el-my-order .main {
   height: 100%;
@@ -861,6 +874,83 @@ body {
   background-color: #f7f7f7;
   border: 0;
 }
+.el-login {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+.el-login header {
+  text-align: center;
+}
+.el-login header .icon {
+  width: 140px;
+  height: 56px;
+}
+.el-login header .link {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.el-login header .link div {
+  font-size: 14px;
+  padding-bottom: 4px;
+  cursor: pointer;
+}
+.el-login header .link div:nth-of-type(2) {
+  color: #2395ff;
+  font-weight: 700;
+  border-bottom: 2px solid #2395ff;
+  margin-left: 40px;
+}
+.el-login main {
+  min-height: 296px;
+}
+.el-login main a {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+}
+.el-login main label {
+  position: relative;
+  margin-top: 16px;
+  height: 48px;
+  font-size: 14px;
+  background: #fff;
+  display: block;
+}
+.el-login main label input {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+.el-login main button {
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin-top: 30px;
+  border-radius: 4px;
+  background: #4cd96f;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  line-height: 42px;
+  border: 0 solid #000;
+}
 .ui-ellipsis {
   overflow: hidden;
   white-space: nowrap;
@@ -868,5 +958,6 @@ body {
 }
 .bottom {
   width: 100%;
-  height: 1rem;
+  flex: 1;
+  align-self: stretch;
 }

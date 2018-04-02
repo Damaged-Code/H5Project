@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <Router history={history}>
-        <div>
+        <div className="App">
           <MyRouter />
         </div>
       </Router>
