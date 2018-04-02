@@ -207,6 +207,12 @@ body {
   font-size: 0.2rem;
   overflow: hidden;
 }
+.el-home .el-home-main .shop-list a .shop-list-content .shop-list-up .shop-desc section h3 span {
+  font-size: .12rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
 .el-home .el-home-main .shop-list a .shop-list-content .shop-list-up .shop-desc section h3 i {
   position: relative;
   margin-right: 1.333333vw;
@@ -873,6 +879,52 @@ body {
   color: #666;
   background-color: #f7f7f7;
   border: 0;
+}
+.el-search .search-list-item .key-list .item {
+  padding: 0 4.266667vw;
+  display: flex;
+  height: 14.933333vw;
+  align-items: center;
+}
+.el-search .search-list-item .key-list .item img {
+  flex: none;
+  width: 6.4vw;
+  height: 6.4vw;
+  margin-right: 4.266667vw;
+  border-radius: .133333vw;
+}
+.el-search .search-list-item .key-list .item div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  height: 14.933333vw;
+  border-bottom: 1px solid #e3e3e3;
+}
+.el-search .search-list-item .key-list .item div p {
+  display: flex;
+  align-items: center;
+}
+.el-search .search-list-item .key-list .item div span {
+  color: #999;
+  font-size: .12rem;
+}
+.el-search .search-list-item .word-list li {
+  display: flex;
+  height: 11.733333vw;
+  align-items: center;
+  padding: 0 4vw;
+}
+.el-search .search-list-item .word-list li .icon {
+  height: 3.466667vw;
+  width: 3.466667vw;
+  margin-right: 3.2vw;
+}
+.el-search .search-list-item .word-list li p {
+  flex: 1;
+  height: 11.733333vw;
+  line-height: 11.733333vw;
+  border-bottom: 1px solid #e3e3e3;
 }
 .el-login {
   width: 300px;

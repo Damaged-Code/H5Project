@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import Svg from './Svg'
 import fetch from 'node-fetch'
-import { LocalStorage } from '../utils/storage';
-import axios from 'axios';
+import { LocalStorage } from '../utils/storage'
+import axios from 'axios'
 
+const localStorage = new LocalStorage()
 export default class Login extends Component {
   constructor(props) {
     super(props)
@@ -22,19 +23,18 @@ export default class Login extends Component {
         password: password,
       }
       res = await axios({
-        baseURL: ''http://localhost:8888'',
-          url:'/login',  
+        baseURL: 'http://localhost:8888',
+        url: '/login',
         method: 'POST',
         data: {
           username: username,
-        password: password,
-        }
-        
+          password: password,
+        },
       })
-      result = await res.json()
+      result = await res.data
       if (result.data) {
-        LocalStorage.set('user',{username:username})
-          this.props.history.push('/user')
+        localStorage.set('user', { username: username })
+        this.props.history.push('/user')
       }
     }
   }

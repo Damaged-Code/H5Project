@@ -1,19 +1,42 @@
 import React, { Component } from 'react'
 import Title from '../parts/Title'
 import ShopList from '../parts/ShopList'
-
+import axios from 'axios'
 export default class Main extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      shopList: [],
+      hasList: false,
+    }
   }
-
+  componentWillMount() {
+    axios({
+      baseURL: 'http://localhost:8888',
+      url: '/shop',
+      method: 'GET',
+      params: {
+        limit: 8,
+        offset: 0,
+      },
+    }).then(async res => {
+      if (res.data.data) {
+        this.setState({
+          shopList: await res.data.data,
+          hasList: true,
+        })
+      }
+    })
+  }
   render() {
     return (
       <main className="el-home-main">
-        
         <Title text="推荐商家" />
-        <ShopList />
+        {this.state.hasList ? (
+          <ShopList shopList={this.state.shopList} />
+        ) : (
+          <ShopList shopList={this.state.shopList} />
+        )}
       </main>
     )
   }

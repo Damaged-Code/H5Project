@@ -10,6 +10,7 @@ let info = {
   text: '登录后查看外卖订单',
   hasUser: false,
 }
+const localStorage = new LocalStorage()
 export default class Order extends Component {
   constructor(props) {
     super(props)
@@ -18,7 +19,7 @@ export default class Order extends Component {
     }
   }
   componentWillMount() {
-    if (LocalStorage.get('user')) {
+    if (localStorage.get('user')) {
       info = {
         imgUrl:
           'https://fuss10.elemecdn.com/8/c8/bbe5984003cb26fc7b445a4a15195png.png',

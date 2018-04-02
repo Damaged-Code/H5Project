@@ -5,15 +5,13 @@ import SearchList from './SearchList'
 export default class extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      hasVal: this.props.hasVal || false,
-      value: this.props.value || '',
-    }
+
+    this.state = {}
   }
 
   render() {
-    if (this.state.hasVal && this.state.value !== '') {
-      return <SearchList />
+    if (this.props.hasVal && this.props.value !== '') {
+      return <SearchList value={this.props.value} />
     } else {
       return <SearchHistory />
     }

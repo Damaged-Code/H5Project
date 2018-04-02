@@ -14,6 +14,9 @@ export default class searchInput extends Component {
       searchVal: e.target.value,
     })
   }
+  sendValue = () => {
+    this.props.onChangeVal(this.state.searchVal)
+  }
   render() {
     return (
       <header className="search-head">
@@ -22,14 +25,16 @@ export default class searchInput extends Component {
         </Link>
         <form action="" className="el-input">
           <input
-            type="text"
+            type="search"
             placeholder="输入商家、商品名称"
-            onChange={this.searchValue}
+            onInput={this.searchValue}
             value={this.searchVal}
             autoComplete="off"
           />
           <Svg icon="icon-sousuo1" />
-          <button type="button">搜索</button>
+          <button type="button" onClick={this.sendValue}>
+            搜索
+          </button>
         </form>
       </header>
     )

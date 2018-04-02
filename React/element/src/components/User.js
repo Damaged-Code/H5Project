@@ -4,9 +4,9 @@ import Login from './user/Login'
 import ManageAction from './user/ManageAction'
 import ManageList from './user/ManageList'
 import Footer from './home/Footer'
-import localStorage from 'localstorage'
+import { LocalStorage } from '../utils/storage'
 
-const user = new localStorage('user')
+const localStorage = new LocalStorage()
 const manageAction = [
   {
     icon: 'icon-jinbi',
@@ -44,8 +44,8 @@ export default class User extends Component {
     }
   }
   componentWillMount() {
-    if (user.get('user').length > 1) {
-      let info = user.get('user')[1],
+    if (localStorage.get('user')) {
+      let info = localStorage.get('user'),
         userStr = info.username.split('')
       userInfo.name = userInfo.desc =
         userStr[0] + '***' + userStr[userStr.length - 1]
