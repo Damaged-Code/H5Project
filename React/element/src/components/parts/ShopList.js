@@ -21,9 +21,10 @@ export default class ShopList extends Component {
           return (
             <Link
               to={{
-                path: '/',
+                pathname: '/shopInfo',
                 query: {
-                  id: tag.id,
+                  tag: tag,
+                  foods: this.props.foods,
                 },
               }}
               key={index}
@@ -51,18 +52,18 @@ export default class ShopList extends Component {
                           showText={true}
                         />
                         <span className="sale">
-                          月售：{tag.recent_order_num}
+                          月售:{tag.recent_order_num}
                         </span>
                       </div>
                     </section>
                     <section>
                       <div>
-                        <span>起送：￥{tag.float_minimum_order_amount}</span>
-                        <span>配送：￥{tag.float_delivery_fee}</span>
+                        <span>起送:￥{tag.float_minimum_order_amount}</span>
+                        <span>配送:￥{tag.float_delivery_fee}</span>
                       </div>
                       <div>
-                        <span>时间：{tag.order_lead_time}</span>
-                        <span>距离：{tag.distance}m</span>
+                        <span>时间:{tag.order_lead_time}</span>
+                        <span>距离:{tag.distance}m</span>
                       </div>
                     </section>
                   </div>

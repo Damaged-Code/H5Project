@@ -48,21 +48,10 @@ export default class Footer extends Component {
   }
   LinkActiveChange = e => {
     e.stopPropagation()
-    let tag = e.target.parentNode,
-      tagIndex = +tag.getAttribute('data-index')
-
-    this.state.routes.map((route, index) => {
-      if (index === tagIndex) {
-        route.active = true
-      } else {
-        route.active = false
-      }
-      return true
-    })
   }
   render() {
     return (
-      <footer className="el-home-footer">
+      <footer className="el-home-footer" onClick={this.LinkActiveChange}>
         <ul>
           {this.state.routes.map((route, index) => {
             return (

@@ -11,7 +11,9 @@ export default class Home extends Component {
   constructor(props) {
     super(props)
   }
-
+  stopPropagation = e => {
+    e.stopPropagation()
+  }
   render() {
     return (
       <div className="el-home">
@@ -22,7 +24,7 @@ export default class Home extends Component {
         <Advertise />
         <Main />
         <div className="bottom" />
-        <Footer />
+        <Footer onClick={this.stopPropagation} />
       </div>
     )
   }

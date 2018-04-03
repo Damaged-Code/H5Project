@@ -43,7 +43,7 @@ export default class extends Component {
           {this.state.shopInfo.map((tag, index) => {
             return (
               <li key={index}>
-                <Link to="/">
+                <Link to={{ pathname: '/shopInfo', tag: tag }}>
                   <div className="item">
                     <img src={tag.image_path} alt="" />
                     <div>

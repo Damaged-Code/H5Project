@@ -6,6 +6,8 @@ import Order from '../components/Order'
 import User from '../components/User'
 import Search from '../components/Search'
 import Login from '../components/Login'
+import ShopInfo from '../components/ShopInfo'
+import Settlement from '../components/Settlement'
 
 const routes = [
   {
@@ -37,6 +39,16 @@ const routes = [
     path: '/login',
     exact: true,
     component: Login,
+  },
+  {
+    path: '/shopInfo',
+    exact: true,
+    component: ShopInfo,
+  },
+  {
+    path: '/settlement',
+    exact: true,
+    component: Settlement,
   },
   {
     exact: true,

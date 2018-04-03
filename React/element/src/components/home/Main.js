@@ -7,6 +7,7 @@ export default class Main extends Component {
     super(props)
     this.state = {
       shopList: [],
+      foods: [],
       hasList: false,
     }
   }
@@ -27,13 +28,24 @@ export default class Main extends Component {
         })
       }
     })
+    axios({
+      baseURL: 'http://localhost:8888',
+      url: '/menus',
+      method: 'GET',
+    }).then(async res => {
+      if (res.data.data) {
+        this.setState({
+          foods: res.data.data[0].menus,
+        })
+      }
+    })
   }
   render() {
     return (
       <main className="el-home-main">
         <Title text="推荐商家" />
         {this.state.hasList ? (
-          <ShopList shopList={this.state.shopList} />
+          <ShopList shopList={this.state.shopList} foods={this.state.foods} />
         ) : (
           <ShopList shopList={this.state.shopList} />
         )}

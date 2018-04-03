@@ -3,6 +3,7 @@
 }
 
 body {
+    width: 100%;
     overflow-x: hidden;
 }
 
@@ -23,6 +24,7 @@ body {
 }
 
 .el-home {
+    position: relative;
     .search {
         position: sticky;
         top: 0;
@@ -182,6 +184,7 @@ body {
             a {
                 display: flex;
                 flex-wrap: wrap;
+                margin-bottom: 0.05rem;
                 .shop-list-content {
                     padding: 0 2.666667vw;
                     width: 100%;
@@ -210,7 +213,7 @@ body {
                                     font-size: 0.2rem;
                                     overflow: hidden;
                                     span {
-                                        font-size: .12rem;
+                                        font-size: 0.12rem;
                                         text-overflow: ellipsis;
                                         overflow: hidden;
                                         white-space: nowrap;
@@ -339,6 +342,10 @@ body {
                                 display: flex;
                                 font-size: 0.1rem;
                                 align-items: flex-start;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                vertical-align: middle;
                                 img {
                                     margin-top: 0.4vw;
                                     height: 2.666667vw;
@@ -365,6 +372,10 @@ body {
                                     span {
                                         font-size: 0.1rem;
                                         color: #999;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        vertical-align: middle;
                                     }
                                     span:nth-of-type(1) {
                                         display: inline-block;
@@ -416,18 +427,24 @@ body {
 
 .el-home-footer {
     position: fixed;
+    left: 0;
+    right: 0;
     bottom: 0;
-    z-index: 999;
-    height: 0.5rem;
-    width: 100%;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.2vw;
     background-color: #fff;
+    height: 13.333333vw;
     box-shadow: 0 -0.266667vw 0.533333vw rgba(0, 0, 0, 0.1);
-    text-align: center;
     ul {
         display: flex;
+        width: 100%;
         height: 100%;
         justify-content: space-around;
         align-items: center;
+        text-align: center;
         a {
             color: #8e8e93;
             font-size: 0.13rem;
@@ -875,7 +892,6 @@ body {
             input {
                 flex-grow: 1;
                 border-radius: 0.266667vw;
-                -webkit-appearance: none;
                 background-color: #f8f8f8;
                 padding: 1.733333vw 4vw 1.733333vw 8.8vw;
                 font-size: 0.12rem;
@@ -931,7 +947,7 @@ body {
                     width: 6.4vw;
                     height: 6.4vw;
                     margin-right: 4.266667vw;
-                    border-radius: .133333vw;
+                    border-radius: 0.133333vw;
                 }
                 div {
                     display: flex;
@@ -946,7 +962,7 @@ body {
                     }
                     span {
                         color: #999;
-                        font-size: .12rem;
+                        font-size: 0.12rem;
                     }
                 }
             }
@@ -1051,6 +1067,580 @@ body {
     }
 }
 
+.el-message-box__wrapper {
+    .el-message-box {
+        width: 2rem;
+    }
+}
+
+.el-shopInfo {
+    width: 100%;
+    height: 100vh;
+    padding-right: 2.266667vw;
+    box-sizing: content-box;
+    overflow-y: auto;
+    .shopInfo-head {
+        position: relative;
+        nav {
+            padding: 1.066667vw 2.666667vw;
+            height: 16vw;
+            display: flex;
+            align-items: justify;
+            position: relative;
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                background-color: rgba(119, 103, 137, 0.2);
+            }
+            img {
+                width: 100%;
+                filter: blur(0.1rem);
+            }
+            a {
+                position: absolute;
+                left: 0.08rem;
+                display: block;
+                align-self: center;
+                justify-self: flex-start;
+                color: #2395ff;
+                font-size: 0.2rem;
+            }
+        }
+        .shopInfo-head-title {
+            padding: 8vw 4vw 0;
+            position: relative;
+            display: flex;
+            background-color: #fff;
+            text-align: center;
+            img {
+                width: 17.333333vw;
+                height: 17.333333vw;
+                border-radius: 0.533333vw;
+                box-shadow: 0 0 0.4vw 0 rgba(0, 0, 0, 0.2);
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -10vw;
+                margin-top: -12vw;
+            }
+            .shopInfo-head-name {
+                flex: 1;
+                width: 72vw;
+                h2 {
+                    margin: 0;
+                    font-size: 0.18rem;
+                    line-height: 1.2em;
+                    font-weight: 700;
+                    white-space: nowrap;
+                    position: relative;
+                    padding-right: 2.666667vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .pp {
+                        border-radius: 0.266667vw;
+                        background-image: linear-gradient(90deg, #fff100, #ffe339);
+                        width: 9.6vw;
+                        height: 4.8vw;
+                        font-size: 0.12rem;
+                        color: #6a3709;
+                    }
+                    .name {
+                        text-align: left;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .desc {
+                    width: 58.133333vw;
+                    font-size: 0.12rem;
+                    font-weight: 300;
+                    color: #999;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    margin: 2.266667vw auto 2.666667vw;
+                    padding: 0;
+                    white-space: nowrap;
+                }
+                .info {
+                    white-space: nowrap;
+                    height: 3.2vw;
+                    margin-top: 1.733333vw;
+                    font-size: 0.12rem;
+                    color: #666;
+                    span {
+                        margin-right: 0.01rem;
+                    }
+                }
+            }
+        }
+        .sale {
+            display: flex;
+            border-radius: 1px;
+            border: 1px solid #eee;
+            padding: 1.333333vw 2.133333vw;
+            color: #666;
+            margin: 0 6.4vw;
+            align-items: center;
+            .sale-info {
+                flex: 1;
+                overflow: hidden;
+                div {
+                    display: flex;
+                    font-size: 0.12rem;
+                    align-items: center;
+                    span:nth-of-type(1) {
+                        margin-right: 1.6vw;
+                        font-size: 0.05rem;
+                        padding: 0.533333vw 1.2vw;
+                        height: 3.466667vw;
+                        display: inline-block;
+                        box-sizing: border-box;
+                        border-radius: 0.266667vw;
+                        color: white;
+                    }
+                    span:nth-of-type(2) {
+                        flex: 1;
+                        font-size: 0.1rem;
+                    }
+                }
+            }
+            .sale-action {
+                width: 16.266667vw;
+                flex-shrink: 0;
+                position: relative;
+                padding-right: 2.933333vw;
+                text-align: right;
+                font-size: 0.1rem;
+                &::after {
+                    content: '';
+                    display: block;
+                    border-style: solid;
+                    border-width: 1.066667vw 0.933333vw 0;
+                    border-color: rgba(0, 0, 0, 0.57) transparent transparent;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 0;
+                }
+            }
+        }
+        .gift {
+            display: flex;
+            justify-content: center;
+            margin-top: 2.133333vw;
+            div {
+                display: inline-block;
+                padding: 0 1.6vw 0 2vw;
+                height: 6.4vw;
+                line-height: 6.4vw;
+                background: #fff4f4;
+                color: #5c1603;
+                font-size: 0.12rem;
+                font-weight: 700;
+                color: #594519;
+                background: #fff8d7;
+                border: 0.133333vw solid #fde6e3;
+                .icon {
+                    display: inline-block;
+                    margin-right: 0.666667vw;
+                    width: 3.333333vw;
+                    height: 2.666667vw;
+                }
+                p {
+                    position: relative;
+                    display: inline-block;
+                    padding-right: 1.866667vw;
+                    font-weight: 700;
+                }
+                button {
+                    padding-left: 1.6vw;
+                    color: #5c1704;
+                    font-weight: 700;
+                    background: transparent;
+                    border: 0 solid #000;
+                }
+            }
+        }
+    }
+    .shopInfo-Link {
+        position: sticky;
+        line-height: 10.666667vw;
+        display: flex;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        div {
+            position: relative;
+            flex: 1;
+            text-align: center;
+            color: #666;
+            border-bottom: 1px solid #ddd;
+        }
+        div:nth-of-type(1) {
+            span {
+                color: #333;
+                font-weight: 700;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -1vw;
+                    left: 0;
+                    right: 0;
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 0.533333vw;
+                    width: 22vw;
+                    background-color: #2395ff;
+                }
+            }
+        }
+    }
+    .shop-info-menus {
+        height: 550px;
+        .menus-content {
+            height: 100%;
+            padding-bottom: 12.8vw;
+            background-color: #fff;
+            main {
+                display: flex;
+                height: 100%;
+                .menus-list {
+                    padding: 0 0 10.666667vw;
+                    list-style: none;
+                    flex: none;
+                    background-color: #f8f8f8;
+                    max-width: 20%;
+                    height: 100%;
+                    .list {
+                        position: relative;
+                        padding: 4.666667vw 2vw;
+                        border-bottom: 1px solid #e8e8e8;
+                        font-size: 0.12rem;
+                        color: #666;
+                        transform: translateZ(0);
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        img {
+                            width: 3.466667vw;
+                            height: 3.466667vw;
+                            vertical-align: top;
+                            margin-right: 1vw;
+                        }
+                    }
+                }
+                .menus {
+                    position: relative;
+                    width: 79.466667vw;
+                    .menus-main {
+                        height: 100%;
+                        padding-bottom: 10.666667vw;
+                        overflow-y: auto;
+                        dl {
+                            dt {
+                                position: relative;
+                                margin-left: 2.666667vw;
+                                padding: 2vw 8vw 2vw 0;
+                                border-bottom: 1px solid #eee;
+                                div {
+                                    display: flex;
+                                    align-items: center;
+                                    overflow: hidden;
+                                    strong {
+                                        margin-right: 1.333333vw;
+                                        font-weight: 700;
+                                        font-size: 0.14rem;
+                                        color: #666;
+                                        flex: none;
+                                    }
+                                    span {
+                                        flex: 1;
+                                        color: #999;
+                                        white-space: nowrap;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        font-size: 0.12rem;
+                                    }
+                                }
+                            }
+                            dd {
+                                position: relative;
+                                margin: 0;
+                                min-height: 30.666667vw;
+                                padding-left: 2.666667vw;
+                                .menus-info {
+                                    padding: 2.666667vw 2.666667vw 2.666667vw 0;
+                                    margin-bottom: 1px;
+                                    display: flex;
+                                    min-height: 27.466667vw;
+                                    position: relative;
+                                    .menus-show {
+                                        flex-grow: 1;
+                                        width: 20.266667vw;
+                                        height: 20.266667vw;
+                                        vertical-align: top;
+                                        flex: none;
+                                        margin-right: 2.666667vw;
+                                        position: relative;
+                                        span {
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            border-top-left-radius: 0.533333vw;
+                                            border-bottom-right-radius: 0.533333vw;
+                                            width: 8.4vw;
+                                            height: 6.466667vw;
+                                            white-space: nowrap;
+                                            span {
+                                                position: absolute;
+                                                left: 0;
+                                                top: 0;
+                                                right: -100%;
+                                                bottom: -100%;
+                                                transform: scale(0.5);
+                                                transform-origin: 0 0;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                font-size: 0.16rem;
+                                                color: #fff;
+                                                background-image: linear-gradient( 135deg, #7ae336, #00c180);
+                                            }
+                                        }
+                                        img {
+                                            width: 100%;
+                                            border-radius: 0.533333vw;
+                                        }
+                                    }
+                                    .food-desc {
+                                        flex-grow: 1;
+                                        flex: 1;
+                                        position: relative;
+                                        padding-bottom: 6.666667vw;
+                                        max-width: 70%;
+                                        .name {
+                                            max-width: 90%;
+                                            font-size: 0.2rem;
+                                            font-weight: 700;
+                                            line-height: 1.2;
+                                            display: flex;
+                                            align-items: start;
+                                            padding-right: 5.333333vw;
+                                            word-break: break-word;
+                                            text-overflow: ellipsis;
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                        }
+                                        .desc {
+                                            margin: 1.333333vw 0 !important;
+                                            color: #999;
+                                            overflow: hidden;
+                                            text-overflow: ellipsis;
+                                            white-space: nowrap;
+                                            width: 48vw;
+                                            font-size: 0.1rem;
+                                        }
+                                        .rate {
+                                            margin: 1.733333vw 0 !important;
+                                            color: #666;
+                                            font-size: 0.1rem;
+                                            line-height: 1;
+                                            span {
+                                                vertical-align: middle;
+                                                font-size: 0.1rem;
+                                            }
+                                        }
+                                        .sale {
+                                            display: flex;
+                                            span {
+                                                display: flex;
+                                                position: relative;
+                                                span {
+                                                    height: 3.466667vw;
+                                                    padding: 0 0.8vw;
+                                                    font-size: 0.1rem;
+                                                }
+                                                span:nth-of-type(1) {
+                                                    span {
+                                                        background-image: linear-gradient( 90deg, #ff7416, #ff3c15 98%);
+                                                        border-top-left-radius: 0.133333vw;
+                                                        border-top-right-radius: 0.133333vw;
+                                                        color: #fff;
+                                                    }
+                                                }
+                                                span:nth-of-type(2) {
+                                                    margin-left: 1.066667vw;
+                                                    span {
+                                                        position: absolute;
+                                                        left: 0;
+                                                        top: 0;
+                                                        right: -100%;
+                                                        bottom: -100%;
+                                                        width: 1.5rem;
+                                                        height: 0.25rem;
+                                                        transform: scale(0.5);
+                                                        transform-origin: 0 0;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        font-size: 0.18rem;
+                                                        color: #f07373;
+                                                        border: 2px solid #ff3c15;
+                                                        border-left: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        strong {
+                                            font-weight: 700;
+                                            font-size: 0.12rem;
+                                            line-height: 4.266667vw;
+                                            color: #f60;
+                                            padding-bottom: 0.933333vw;
+                                            display: flex;
+                                            align-items: baseline;
+                                            del {
+                                                font-size: 0.1rem;
+                                                color: #666;
+                                                font-weight: 400;
+                                                vertical-align: top;
+                                            }
+                                        }
+                                        .buy {
+                                            position: absolute;
+                                            right: 0;
+                                            bottom: -0.666667vw;
+                                            span {
+                                                display: inline-block;
+                                                padding: 0.933333vw;
+                                                vertical-align: middle;
+                                                text-decoration: none;
+                                                font-size: 0.2rem;
+                                                white-space: nowrap;
+                                                pointer-events: none;
+                                                .icon {
+                                                    width: 0.2rem;
+                                                    height: 0.2rem;
+                                                    vertical-align: middle;
+                                                    fill: #2395ff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .menus-footer {
+        footer {
+            font-size: 0.12rem;
+            div {
+                z-index: 111;
+            }
+            .up {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                transition: -webkit-transform 0.3s ease;
+                transition: transform 0.3s ease;
+                transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+                transform: translate3d(0, 100%, 0);
+                bottom: 18.133333vw;
+                section {
+                    background-color: #fffad6;
+                    border-top: 1px solid #f9e8a3;
+                    opacity: 0.96;
+                    line-height: 5.333333vw;
+                    text-align: center;
+                    color: #666;
+                }
+            }
+            .down {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: flex;
+                align-items: center;
+                padding-left: 21.066667vw;
+                background-color: rgba(61, 61, 63, 0.9);
+                height: 12.8vw;
+                .shopCart {
+                    position: absolute;
+                    left: 3.2vw;
+                    bottom: 2vw;
+                    width: 13.333333vw;
+                    height: 13.333333vw;
+                    box-sizing: border-box;
+                    border-radius: 100%;
+                    background-color: #3190e8;
+                    border: 1.333333vw solid #444;
+                    box-shadow: 0 -0.8vw 0.533333vw 0 rgba(0, 0, 0, 0.1);
+                    will-change: transform;
+                    background-image: radial-gradient(circle, #363636 6.266667vw, #444 0);
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjRkZGIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiMyMDczQzEiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4xIi8+PC9nPjxwYXRoIHN0cm9rZT0iI0ZGRiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2Utd2lkdGg9IjYiIGQ9Ik05LjM3NCAxOC43MjJTNy44NjggMTEuMjgzIDcuMzIzIDguNzFDNi43NzggNi4xMzYgNS44NiA1LjMzIDMuOTc4IDQuNTIgMi4wOTYgMy43MTMuMzY3IDIuMjg2LjM2NyAyLjI4NiIvPjxjaXJjbGUgY3g9IjQ2IiBjeT0iNTEiIHI9IjQiIGZpbGw9IiNGRkYiLz48Y2lyY2xlIGN4PSIxMiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjRkZGIi8+PC9nPjwvc3ZnPg==) no-repeat 50%;
+                        background-size: 6vw;
+                        content: '';
+                        background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNTggNTgiPjxkZWZzPjxmaWx0ZXIgaWQ9ImEiIHdpZHRoPSIyMDAlIiBoZWlnaHQ9IjIwMCUiIHg9Ii01MCUiIHk9Ii01MCUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCI+PGZlT2Zmc2V0IGluPSJTb3VyY2VBbHBoYSIgcmVzdWx0PSJzaGFkb3dPZmZzZXRPdXRlcjEiLz48ZmVHYXVzc2lhbkJsdXIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIiBzdGREZXZpYXRpb249IjEuNSIvPjxmZUNvbG9yTWF0cml4IGluPSJzaGFkb3dCbHVyT3V0ZXIxIiByZXN1bHQ9InNoYWRvd01hdHJpeE91dGVyMSIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA4IDAiLz48ZmVNZXJnZT48ZmVNZXJnZU5vZGUgaW49InNoYWRvd01hdHJpeE91dGVyMSIvPjxmZU1lcmdlTm9kZSBpbj0iU291cmNlR3JhcGhpYyIvPjwvZmVNZXJnZT48L2ZpbHRlcj48cGF0aCBpZD0iYiIgZD0iTTcuNjE0IDQuMDUxYy0xLjA2Ni4wODYtMS40NTItLjM5OC0xLjc1Mi0xLjU4NEM1LjU2MiAxLjI4LjMzIDUuODguMzMgNS44OGwzLjcxIDE5LjQ3NmMwIC4xNDgtMS41NiA3LjUxNS0xLjU2IDcuNTE1LS40ODkgMi4xOS4yOTIgNC4yNyAzLjU2IDQuMzIgMCAwIDM2LjkxNy4wMTcgMzYuOTIuMDQ3IDEuOTc5LS4wMTIgMi45ODEtLjk5NSAzLjAxMy0zLjAzOS4wMy0yLjA0My0xLjA0NS0yLjk3OC0yLjk4Ny0yLjk5M0w4LjgzIDMxLjE5MnMuODYtMy44NjUgMS4wNzctMy44NjVjMCAwLTUuNzg4LjEyMiAzMi4wNjUtMS45NTYuNjA2LS4wMzMgMi4wMTgtLjc2NCAyLjI5OC0xLjg0OCAxLjExMy00LjMxNyA0LjAwOC0xMy4yNiA0LjQ1OC0xNS42NC45MzItNC45MjUgMi4wNjEtOC41NTgtNC4yOC03LjQwNSAwIDAtMzUuNzY4IDMuNDg3LTM2LjgzMyAzLjU3M3oiLz48L2RlZnM+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWx0ZXI9InVybCgjYSkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMgMikiPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUuMDM4IDcuODA4KSI+PG1hc2sgaWQ9ImMiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI2IiLz48L21hc2s+PHVzZSBmaWxsPSIjNUY1RjYzIiB4bGluazpocmVmPSIjYiIvPjxwYXRoIGZpbGw9IiNFQkVFRjMiIGQ9Ik01My45NjIgNy43NzRsLTUuNzAxIDE5LjMwNS00MC43OCAxLjU3NHoiIG1hc2s9InVybCgjYykiIG9wYWNpdHk9Ii4wNSIvPjwvZz48cGF0aCBzdHJva2U9IiM1RjVGNjMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI2IiBkPSJNOS4zNzQgMTguNzIyUzcuODY4IDExLjI4MyA3LjMyMyA4LjcxQzYuNzc4IDYuMTM2IDUuODYgNS4zMyAzLjk3OCA0LjUyIDIuMDk2IDMuNzEzLjM2NyAyLjI4Ni4zNjcgMi4yODYiLz48Y2lyY2xlIGN4PSI0NiIgY3k9IjUxIiByPSI0IiBmaWxsPSIjNUY1RjYzIi8+PGNpcmNsZSBjeD0iMTIiIGN5PSI1MSIgcj0iNCIgZmlsbD0iIzVGNUY2MyIvPjwvZz48L3N2Zz4=);
+                    }
+                    &::after {
+                        position: absolute;
+                        right: -1.2vw;
+                        top: -1.333333vw;
+                        line-height: 1;
+                        background-image: linear-gradient(-90deg, #ff7416, #ff3c15 98%);
+                        color: #fff;
+                        border-radius: 3.2vw;
+                        padding: 0.533333vw 1.333333vw;
+                        content: attr(data-num);
+                        font-size: 0.1rem;
+                    }
+                }
+                .ps {
+                    flex: 1;
+                    .price {
+                        font-size: 0.2rem;
+                        line-height: normal;
+                        color: #fff;
+                    }
+                    .ps-price {
+                        color: #999;
+                        font-size: 0.14rem;
+                    }
+                }
+                .check-out {
+                    height: 100%;
+                    width: 28vw;
+                    background-color: #4cd964;
+                    color: #fff;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 0.2rem;
+                    font-weight: 700;
+                    user-select: none;
+                    line-height: 12.8vw;
+                }
+            }
+        }
+    }
+}
+
 .ui-ellipsis {
     overflow: hidden;
     white-space: nowrap;
@@ -1061,4 +1651,9 @@ body {
     width: 100%;
     flex: 1;
     align-self: stretch;
+    min-height: 1rem;
+}
+
+a {
+    color: #666;
 }
