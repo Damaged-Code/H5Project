@@ -1583,11 +1583,15 @@ body {
   user-select: none;
   line-height: 12.8vw;
 }
+.el-settlement {
+  background-color: #f5f5f5;
+}
 .el-settlement .address {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAICAYAAAEkWSnHAAAAAXNSR0IArs4c6QAAAUtJREFUSA1jYKAmYIQZpjL1fwOMjUwzMTHMvpXJ+BQk9r9WpY6BkYEJWR7GZmy60wBjU4UGu0xt2v+if/8Z+LCZeCebEW7j/zoVOBtFLRN/F2PD2W8oYoOJAw9/ten/zf79Y/AixXHAiLh3K5txEbqe/3WqwcDY0kUXx8tnYj7E2HBzH141o5J4QgAelcYz/3N9/MNQhkctphQjw787WYxN6BL/W9SkGX79S0UXx8tnYvrE2HCrD6YGnl9JdhTQhNuZDM0wg1BoUh0F1IzsKBSzRjmjIUCTEIDnSWTTgUVtBLCo1UAWowUbmO/2AIvnI8SY/X+SCjvDG8YMYLEtSIx6CtT8Z2BiWcjYcOMBNjNQAkxnwn/xn2wMqf//M7BgU0wtMUZGhq9M7AwzbiYzfibGzP8NqgYM//4HEKOWQjWPGZhi5jM2NPzDZQ4AaBtXeW5GU0UAAAAASUVORK5CYII=);
   background-repeat: repeat-x;
   background-position: 0 100%;
   background-size: 10.133333vw 1.066667vw;
+  background-color: white;
   padding: 4.266667vw 0;
   min-height: 22.133333vw;
   display: flex;
@@ -1608,6 +1612,12 @@ body {
   color: #2395ff;
   background: none;
   outline: none;
+}
+.el-settlement .payment {
+  margin-bottom: 2.133333vw;
+  padding: 0 5.333333vw;
+  background: #fff;
+  box-shadow: 0 0.133333vw 0.266667vw 0 rgba(0, 0, 0, 0.05);
 }
 .menus-list-active {
   background-color: white;

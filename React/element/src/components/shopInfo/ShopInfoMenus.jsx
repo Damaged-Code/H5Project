@@ -66,6 +66,7 @@ export default class ShopInfoMenus extends Component {
           all_price += tag.countPrice
           foods_num += tag.num
         }
+
         allPrice.innerText = all_price
         allPrice.style.color = 'white'
         foodsNum.setAttribute('data-num', foods_num)
@@ -73,34 +74,13 @@ export default class ShopInfoMenus extends Component {
         //console.log(all_price, foods_num)
 
         if (flag) {
-          num++
-          foods.push({
-            shopId: shopId,
-            name: food.name.trim(),
-            price: food.activity.fixed_price,
-            num: num,
-            countPrice: num * food.activity.fixed_price,
-            image_path: food.image_path,
-            original_price: food.original_price,
-            ps: this.props.ps,
-          })
-          localStorage.set('shopCart', foods)
+          this.pushInfo(e)
         } else {
           localStorage.set('shopCart', foods)
         }
       } else {
+        this.pushInfo(e)
         num++
-        foods.push({
-          shopId: shopId,
-          name: food.name.trim(),
-          price: food.activity.fixed_price,
-          num: num,
-          countPrice: num * food.activity.fixed_price,
-          image_path: food.image_path,
-          original_price: food.original_price,
-          ps: this.props.ps,
-        })
-        localStorage.set('shopCart', foods)
         foodsNum.setAttribute('data-num', num)
         allPrice.innerText = num * food.activity.fixed_price
         link.style.pointerEvents = 'auto'
@@ -111,6 +91,28 @@ export default class ShopInfoMenus extends Component {
       MessageBox.alert('请登录', '提醒')
       return false
     }
+  }
+  pushInfo(e) {
+    let tag = e.target,
+      food = JSON.parse(tag.getAttribute('data-food')),
+      shopId = parseInt(tag.getAttribute('data-id')),
+      foods = [],
+      num = 0
+    num++
+    if (localStorage.get('shopCart')) {
+      foods = localStorage.get('shopCart')
+    }
+    foods.push({
+      shopId: shopId,
+      name: food.name.trim(),
+      price: food.activity.fixed_price,
+      num: num,
+      countPrice: num * food.activity.fixed_price,
+      image_path: food.image_path,
+      original_price: food.original_price,
+      ps: this.props.ps,
+    })
+    localStorage.set('shopCart', foods)
   }
   render() {
     return (

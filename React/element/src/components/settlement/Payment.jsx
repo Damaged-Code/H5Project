@@ -1,14 +1,30 @@
 import React, { Component } from 'react'
 import Svg from '../Svg'
+import { TimeSelect } from 'element-react'
 
 export default class extends Component {
+  constructor(props) {
+    super(props)
+    let date = new Date(),
+      year = date.getFullYear(),
+      mouth = date.getMonth(),
+      day = date.getDay(),
+      hour = date.getHours(),
+      minutes = date.getMinutes()
+
+    this.state = {
+      startDate: new Date(year, mouth, day, hour, 0),
+    }
+  }
+  handleStartUpdate(startDate) {
+    this.setState({ startDate })
+  }
   render() {
     return (
-      <div>
+      <div className="payment checkout-section key-card">
         <section>
-          <div>
+          <div className="delivery">
             <div>
-              1
               <p>
                 <span>送达时间</span>
               </p>
@@ -17,9 +33,17 @@ export default class extends Component {
               </p>
             </div>
             <div>
-              2
               <div>
-                <section>1</section>
+                <section>
+                  <TimeSelect
+                    start="08:30"
+                    step="00:15"
+                    end="18:30"
+                    placeholder="选择时间"
+                    value={this.state.startDate}
+                    onChange={this.handleStartUpdate.bind(this)}
+                  />
+                </section>
                 <Svg icon="icon-jiantouyou" />
               </div>
             </div>
