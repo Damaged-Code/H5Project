@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Svg from './Svg'
-import fetch from 'node-fetch'
 import { LocalStorage } from '../utils/storage'
 import axios from 'axios'
 
@@ -9,6 +8,11 @@ export default class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {}
+  }
+  componentWillMount() {
+    if (localStorage.get('user')) {
+      this.props.history.push('/user')
+    }
   }
   userLogin = async () => {
     let username = this.refs.username.value,

@@ -13,9 +13,7 @@ const routes = [
     active: true,
   },
   {
-    path: {
-      pathname: '/find',
-    },
+    path: '/find',
     exact: true,
     component: '',
     text: '发现',

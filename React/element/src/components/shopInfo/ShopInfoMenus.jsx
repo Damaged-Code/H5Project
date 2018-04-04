@@ -120,7 +120,11 @@ export default class ShopInfoMenus extends Component {
             <ul className="menus-list">
               {this.props.menus.map((list, index) => {
                 return (
-                  <li className="list" key={index}>
+                  <li
+                    className="list"
+                    key={index}
+                    className={index === 0 ? 'menus-list-active list' : 'list'}
+                  >
                     {list.id == 'rexiao' ? (
                       <img
                         src="https://fuss10.elemecdn.com/0/6a/05b267f338acfeb8bd682d16e836dpng.png?imageMogr/format/webp/thumbnail/26x/"

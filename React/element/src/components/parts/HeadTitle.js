@@ -17,8 +17,8 @@ export default class HeadTitle extends Component {
   }
 
   render() {
-    let text = this.props.text,
-      path = this.props.path
+    let text = this.props.text || '=.=',
+      path = this.props.path || '/'
     return (
       <header className="head-title">
         <div className="content">

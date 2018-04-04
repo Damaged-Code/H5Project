@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ShopInfoHead from './shopInfo/ShopInfoHead'
 import ShopInfoMenus from './shopInfo/ShopInfoMenus'
-import axios from 'axios'
 
 export default class ShopOInfo extends Component {
   constructor(props) {
