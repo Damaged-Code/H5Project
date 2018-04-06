@@ -1,21 +1,36 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { Component } from 'react'
+import Canvas from './components/Canvas'
+import PropTypes from 'prop-types'
+import { getCanvasPosition } from './utils/formulas'
 class App extends Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidMount() {
+    const self = this
+    setInterval(async () => {
+      await self.props.moveObjects(self.canvasMousePosition)
+    }, 10)
+  }
+
+  trackMouse(event) {
+    this.canvasMousePosition = getCanvasPosition(event)
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Canvas
+          angle={this.props.angle}
+          trackMouse={event => this.trackMouse(event)}
+        />
       </div>
-    );
+    )
   }
 }
-
-export default App;
+App.propTypes = {
+  angle: PropTypes.number.isRequired,
+  moveObjects: PropTypes.func.isRequired,
+}
+export default App
