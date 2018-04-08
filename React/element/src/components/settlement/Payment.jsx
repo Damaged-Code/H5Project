@@ -24,15 +24,16 @@ export default class extends Component {
       <div className="payment checkout-section key-card">
         <section>
           <div className="delivery">
-            <div>
-              <p>
+            <div className="delivery-left">
+              <p className="delivery-time">
                 <span>送达时间</span>
               </p>
-              <p>
+              <p className="delivery-extra">
                 <span>蜂鸟专送</span>
               </p>
             </div>
-            <div>
+
+            <div className="right">
               <div>
                 <section>
                   <TimeSelect

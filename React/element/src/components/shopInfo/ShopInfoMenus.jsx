@@ -66,13 +66,11 @@ export default class ShopInfoMenus extends Component {
           all_price += tag.countPrice
           foods_num += tag.num
         }
-
+        //console.log(all_price, foods_num)
         allPrice.innerText = all_price
         allPrice.style.color = 'white'
         foodsNum.setAttribute('data-num', foods_num)
         settlement.innerText = '去结算'
-        //console.log(all_price, foods_num)
-
         if (flag) {
           this.pushInfo(e)
         } else {
@@ -111,6 +109,7 @@ export default class ShopInfoMenus extends Component {
       image_path: food.image_path,
       original_price: food.original_price,
       ps: this.props.ps,
+      shopName: this.props.shopName,
     })
     localStorage.set('shopCart', foods)
   }

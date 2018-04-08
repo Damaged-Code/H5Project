@@ -34,6 +34,7 @@ export default class ShopOInfo extends Component {
           qs={this.props.location.query.tag.float_minimum_order_amount}
           shopId={this.props.location.query.tag.shop_id}
           menus={this.props.location.query.foods}
+          shopName={this.props.location.query.tag.name}
         />
       </div>
     )

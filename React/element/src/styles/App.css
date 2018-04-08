@@ -1619,6 +1619,13 @@ body {
   background: #fff;
   box-shadow: 0 0.133333vw 0.266667vw 0 rgba(0, 0, 0, 0.05);
 }
+.el-settlement .payment .delivery {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dotted #eee;
+  padding: 4.266667vw 0;
+}
 .menus-list-active {
   background-color: white;
 }

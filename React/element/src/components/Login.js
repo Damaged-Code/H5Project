@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Svg from './Svg'
 import { LocalStorage } from '../utils/storage'
 import axios from 'axios'
+import { MessageBox } from 'element-react'
 
 const localStorage = new LocalStorage()
 export default class Login extends Component {
@@ -39,6 +40,9 @@ export default class Login extends Component {
       if (result.data) {
         localStorage.set('user', { username: username })
         this.props.history.push('/user')
+      } else {
+        MessageBox.alert('用户名或密码错误', '提醒')
+        return false
       }
     }
   }
