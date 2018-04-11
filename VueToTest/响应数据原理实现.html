@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>响应式原理的实现</title>
+</head>
+
+<body>
+  <div id="app">
+    <form>
+      <input type="text" v-model="number" value=0>
+      <button type="button" v-click="increment">增加</button>
+    </form>
+    <h3 v-bind="number"></h3>
+  </div>
+</body>
+<script>
+  function Vue(options) {
+    this._init(options)
+  }
+  Vue.prototype._init = function (options) {
+    this.$options = options
+    this.$el = document.querySelector(options.el)
+    this.$data = options.data
+    this.$methods = options.methods
+    this._binding = {};   //_binding保存着model与view的映射关系，也就是我们前面定义的Watcher的实例。当model改变时，我们会触发其中的指令类更新，保证view也能实时更新
+    this._obverse(this.$data)
+    this._complie(this.$el);
+
+  }
+  Vue.prototype._obverse = function (obj) {
+    let value
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        this._binding[key] = {    // 按照前面的数据，_binding = {number:_directives: []}            
+          _directives: []
+        };
+        value = obj[key];
+        if (typeof value === 'obejct') {
+          this._obverse(value)
+        }
+        var binding = this._binding[key];
+        //console.log(this._binding[key])
+        Object.defineProperty(this.$data, key, {
+          enumerable: true,
+          configurable: true,
+
+          get: function () {
+            console.log(`获取${value}`);
+            return value
+          },
+          set: function (newVal) {
+            console.log(`设置${newVal}`)
+            if (value !== newVal) {
+              value = newVal
+              console.log(binding._directives)
+              binding._directives.forEach(function (item) {  // 当number改变时，触发_binding[number]._directives 中的绑定的Watcher类的更新
+                item.update();
+              })
+            }
+          }
+        })
+      }
+    }
+  }
+  Vue.prototype._complie = function (root) {
+    //为 id为app的Element元素，也就是我们的根元素
+    let self = this;
+    let nodes = root.children;
+    //console.log(root.children)
+    for (let node of nodes) {
+      //let node = nodes[index]
+      if (node.length) {
+        this._complie(node);
+      }
+      //console.log(nodes[index])
+      if (node.hasAttribute('v-click')) {  // 如果有v-click属性，我们监听它的onclick事件，触发increment事件，即number++
+        node.onclick = (function () {
+          let attrVal = node.getAttribute('v-click');
+          return self.$methods[attrVal].bind(self.$data);  //bind是使data的作用域与method函数的作用域保持一致
+        })();
+      }
+      if (node.hasAttribute('v-model') && (node.tagName = 'INPUT' || node.tagName == 'TEXTAREA')) { // 如果有v-model属性，并且元素是INPUT或者TEXTAREA，我们监听它的input事件
+        var attrVal = node.getAttribute('v-model');
+        self._binding[attrVal]._directives.push(new Watcher(
+          'input',
+          node,
+          self,
+          attrVal,
+          'value'
+        ))
+        //console.log(1111)
+        self.$data[attrVal] = node.value; // 使number 的值与 node的value保持一致，已经实现了双向绑定
+
+        node.addEventListener('input', (function (key) {
+          //_this._binding['number']._directives = [一个Watcher实例]
+          // 其中Watcher.prototype.update = function () {
+          //	node['vaule'] = _this.$data['number'];  这就将node的值保持与number一致
+          // }
+          self._binding[attrVal]._directives.push(new Watcher(
+            'input',
+            node,
+            self,
+            attrVal,
+            'value'
+          ))
+          //console.log(1111)
+          return function () {
+            self.$data[attrVal] = key.data; // 使number 的值与 node的value保持一致，已经实现了双向绑定
+          }
+        }));
+      }
+      if (node.hasAttribute('v-bind')) { // 如果有v-bind属性，我们只要使node的值及时更新为data中number的值即可
+        var attrVal = node.getAttribute('v-bind');
+        self._binding[attrVal]._directives.push(new Watcher(
+          'text',
+          node,
+          self,
+          attrVal,
+          'innerHTML'
+        ))
+      }
+    }
+  }
+  function Watcher(name, el, vm, exp, attr) {
+    this.name = name;         //指令名称，例如文本节点，该值设为"text"
+    this.el = el;             //指令对应的DOM元素
+    this.vm = vm;             //指令所属Vue实例
+    this.exp = exp;           //指令对应的值，本例如"number"
+    this.attr = attr;         //绑定的属性值，本例为"innerHTML"
+
+    this.update();
+
+  }
+  Watcher.prototype.update = function () {
+    this.el[this.attr] = this.vm.$data[this.exp];
+    //比如 H3.innerHTML = this.data.number; 当number改变时，会触发这个update函数，保证对应的DOM内容进行了更新。
+    //console.log(this.vm.$data[this.exp])
+  }
+
+  var app = new Vue({
+    el: '#app',
+    data: {
+      number: 0
+    },
+    methods: {
+      increment: function () {
+        this.number++;
+      },
+    }
+  })
+
+</script>
+
+</html>

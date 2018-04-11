@@ -2,12 +2,13 @@ import { connect } from 'react-redux'
 
 import App from '../App'
 import { moveObjects } from '../actions/index'
+import { createAction } from 'redux-actions'
 
 const mapStateToProps = state => ({
   angle: state.angle,
 })
 
-const mapDispatchToProps = async dispatch => ({
+const mapDispatchToProps = dispatch => ({
   moveObjects: mousePosition => {
     dispatch(moveObjects(mousePosition))
   },

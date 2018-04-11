@@ -9,8 +9,8 @@ class App extends Component {
 
   componentDidMount() {
     const self = this
-    setInterval(async () => {
-      await self.props.moveObjects(self.canvasMousePosition)
+    setTimeout( () => {
+       self.props.moveObjects(self.canvasMousePosition)
     }, 10)
   }
 
