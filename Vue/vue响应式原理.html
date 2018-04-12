@@ -11,8 +11,144 @@
 <body>
   <div id='app'>
     <input type="text" v-model='number'>
+    <button v-click='inc'>++</button>
     <p class='test'>{{number}}</p>
   </div>
 </body>
+<script>
+
+
+  function MyVue(options) {
+    this._init(options)
+  }
+  MyVue.prototype._init = function (options) {
+    this.$el = document.querySelector(options.el)
+    this.$data = options.data
+    this.$methods = options.methods
+    this._binding = {};
+
+    this._obersver(this.$data)
+    this._complie(this.$el)
+  }
+  MyVue.prototype._obersver = function (obj) {
+    for (let key of Object.keys(obj)) {
+      this._binding[key] = {    // 按照前面的数据，_binding = {number:_directives: []}            
+        _directives: []
+      };
+      if (typeof obj[key] === 'object' && !obj[key].length) {
+        this._obersver(obj(key))
+      }
+      value = obj[key]
+      var binding = this._binding[key];
+      Object.defineProperty(obj, key, {
+        configurable: true,
+        enumerable: true,
+        get: function () {
+          //console.log(value)
+          return value
+        },
+        set: function (newVal) {
+          if (value !== newVal) {
+            value = newVal
+            //console.log(value, newVal)
+            binding._directives.forEach(function (item) {  // 当number改变时，触发_binding[number]._directives 中的绑定的Watcher类的更新
+              item.updated();
+            })
+          }
+        }
+      })
+    }
+  }
+  MyVue.prototype._complie = function (root) {
+    let nodes = []
+    if (root.children) {
+      nodes = root.children
+    }
+
+    let self = this
+    let reg = /{{(\w+)}}/
+
+
+    for (let node of nodes) {
+      if (nodes.length) {
+        this._complie(nodes)
+      }
+      // console.log(node.nodeName)
+      if (node.nodeName === 'INPUT' && node.hasAttribute('v-model')) {
+        let attr = node.getAttribute('v-model')
+        self._binding[attr]._directives.push(
+          new Wather(
+            node.nodeName,
+            node,
+            self,
+            attr,
+            'value'
+          )
+        )
+        self.$data[attr] = parseInt(node.value)
+        node.addEventListener('keyup', function (key) {
+          self.$data[attr] = parseInt(node.value)
+          self._binding[attr]._directives.push(
+            new Wather(
+              node.nodeName,
+              node,
+              self,
+              attr,
+              'value'
+            )
+          )
+          //console.log(node.value)
+          return function () {
+            self.$data[attr] = parseInt(node.value)
+          }
+        })
+
+      }
+      if (node.hasAttribute('v-click')) {
+        node.onclick = function () {
+          let method = node.getAttribute('v-click')
+          return self.$methods[method].bind(self.$data)
+        }()
+      }
+      if (reg.test(node.innerHTML)) {
+        let attr = reg.exec(node.innerHTML)[1]
+        //node.innerHTML = self.$data[tag]
+
+        self._binding[attr]._directives.push(
+          new Wather(
+            node.nodeName,
+            node,
+            self,
+            attr,
+            'innerHTML'
+          )
+        )
+      }
+    }
+  }
+  function Wather(name, el, vm, attr, inner) {
+    this.name = name
+    this.el = el
+    this.vm = vm
+    this.attr = attr
+    this.inner = inner
+
+    this.updated()
+  }
+  Wather.prototype.updated = function () {
+    this.el[this.inner] = this.vm.$data[this.attr]
+  }
+  new MyVue({
+    el: "#app",
+    data: {
+      number: 0
+    },
+    methods: {
+      inc: function () {
+        this.number++
+      }
+    }
+  })
+</script>
 
 </html>
