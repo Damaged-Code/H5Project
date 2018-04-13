@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PagesIndexComponent } from './pages-index/pages-index.component';
 import { PagesFooterComponent } from './pages-footer/pages-footer.component';
+import { HeaderComponent } from './pages-index/header/header.component';
+import { LogoWrapComponent } from './pages-index/logo-wrap/logo-wrap.component';
+import { DownBannerComponent } from './pages-index/down-banner/down-banner.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PagesIndexComponent,
-    PagesFooterComponent
+    PagesFooterComponent,
+    HeaderComponent,
+    LogoWrapComponent,
+    DownBannerComponent
   ],
   imports: [
     BrowserModule,
