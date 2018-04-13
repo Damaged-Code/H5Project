@@ -7,31 +7,63 @@
   <title>Title</title>
   <style>
     #app {
-      width: 400px;
-      height: 250px;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
+      width: 800px;
+      height: 400px;
 
-    #app div {
-      width: 30%;
-      height: 100px;
-      background-color: bisque;
     }
   </style>
 </head>
 
 <body>
-  <div id="app">
-    <div class='box1'>1</div>
-    <div class='box2'>1</div>
-    <div>1</div>
-    <div class='box1'>1</div>
-    <div class='box2'>1</div>
-    <div>1</div>
-  </div>
+  <canvas id="app"></canvas>
+  <script>
 
+    let canvas = document.getElementById('app');
+    let ctx = canvas.getContext('2d');
+    let data = [{
+      size: 0.4,
+      color: 'red'
+    }, {
+      size: 0.4,
+      color: 'black'
+    },
+    {
+      size: 0.4,
+      color: 'yellow'
+    }, {
+      size: 0.2,
+      color: 'green'
+    }, {
+      size: 0.2,
+      color: 'blue'
+    },
+    {
+      size: 0.4,
+      color: 'aquamarine'
+    }];
+
+
+
+    function area(options) {
+      let start = 0
+      let end = 0
+      //console.log(1);
+      for (let item of options) {
+        // console.log(item);
+        ctx.beginPath();
+        ctx.moveTo(100, 100)
+        end += item.size
+        ctx.arc(100, 100, 50, start, (end) * Math.PI, false);
+        ctx.fillStyle = item.color
+        ctx.lineTo(100, 100)
+        ctx.fill()
+        ctx.closePath();
+        start += item.size
+        console.log(start);
+      }
+    }
+    area(data)
+  </script>
 </body>
 
 </html>
