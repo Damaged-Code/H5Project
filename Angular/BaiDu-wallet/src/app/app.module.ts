@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { PagesIndexComponent } from './pages-index/pages-index.component';
+import { PagesFooterComponent } from './pages-footer/pages-footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagesIndexComponent
+    PagesIndexComponent,
+    PagesFooterComponent
   ],
   imports: [
     BrowserModule,
