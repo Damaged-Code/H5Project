@@ -99,11 +99,15 @@ nav,
 section {
   display: block;
 }
+* {
+  border: 0 solid #000;
+}
 body {
   line-height: 1;
 }
 html {
   font-size: 625%;
+  min-height: 667px;
 }
 body,
 html {
@@ -131,4 +135,18 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  height: 0;
+  content: '';
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #6492e3;
+  text-decoration: none;
 }

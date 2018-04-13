@@ -9,6 +9,8 @@ import { PagesFooterComponent } from './pages-footer/pages-footer.component';
 import { HeaderComponent } from './pages-index/header/header.component';
 import { LogoWrapComponent } from './pages-index/logo-wrap/logo-wrap.component';
 import { DownBannerComponent } from './pages-index/down-banner/down-banner.component';
+import { HomeSectionFComponent } from './pages-index/home-section-f/home-section-f.component';
+import { HomeSectionSComponent } from './pages-index/home-section-s/home-section-s.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { DownBannerComponent } from './pages-index/down-banner/down-banner.compo
     PagesFooterComponent,
     HeaderComponent,
     LogoWrapComponent,
-    DownBannerComponent
+    DownBannerComponent,
+    HomeSectionFComponent,
+    HomeSectionSComponent
   ],
   imports: [
     BrowserModule,
