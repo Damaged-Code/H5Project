@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class='box'>111111111111111111111111</div>
+  <div class="a">aqaaa</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  //$('.a')[0].addClass('b');
+  //$('.a').eq(0).addClass('b');
+  //$('.a:first').addClass('b');
+  //$('.a').get(0).addClass('b');
+
+  // for (var i = 0; i < 3; i++) {
+  //   window.setTimeout(function (i) {
+  //     console.log(i);
+  //   }(i), i);
+  // }
+  // console.log(i);
+  var a = true
+
+
+  if (a == (1) && a == (2) && a == (3)) {
+    console.log('aaa');
+  }
+
+  var arr = [1]
+  console.log(Object.prototype.toString.call(arr) === "[object Array]")
+  console.log(Array.isArray(arr));
+  console.log(typeof arr === 'object' && arr.length);
+
+  // if (!('a' in window)) {
+  //   var a = 1;
+  // }
+  // alert(a);
+  var a = [1, 2, 3, 4]; a.splice(1, 1);
+  console.log(a);
+  let arr1 = []
+  let time = null
+  /*  function fn(length) {
+     arr1.push(length)
+     length++
+     if (length < 100) {
+       fn(length)
+     }
+   }
+   fn(0) */
+  /* function fn(arr, i) {
+    if (i == 100) {
+      return
+    }
+    arr.push(i++)
+    return fn(arr, i)
+  }
+  fn(arr1, 0) */
+  /*   var i = 0
+    time = setInterval(function () {
+  
+      if (i < 100) {
+        arr1.push(i)
+        i++
+        console.log(i)
+      }
+      if (i == 100) {
+        clearInterval(time)
+      }
+    }, 100) */
+  // arr1.length = 100
+  // arr1.fill(100)
+
+  console.log(arr1);
+
+  /*  function Event() {
+   }
+ 
+   Event.prototype.on = function (el, type, fn) {
+     el = document.querySelectorAll(el)
+     for (let tag of el) {
+       tag.addEventListener(type, fn)
+     }
+   }
+ 
+   let event = new Event()
+   event.on('.box', 'click', function () {
+     console.log(1)
+   }) */
+  let arr2 = []
+  for (let i = 0; i < 100; i++) {
+    arr2.push(1)
+  }
+  //console.log(arr2);
+  let key = 1
+  function fn(index) {
+    // console.log(index)
+    for (let i = 1; i <= arr2.length; i++) {
+      if (key == i || key % i == 0) {
+        if (arr2[i - 1]) {
+          arr2[i - 1] = 0
+        }
+        else {
+          arr2[i - 1] = 1
+
+        }
+      }
+    }
+    key++
+    if (key < arr2.length) {
+      fn(key)
+    }
+  }
+  fn(key)
+  console.log(arr2);
+
+</script>
+
+</html>
