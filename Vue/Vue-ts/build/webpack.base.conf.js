@@ -35,6 +35,7 @@ module.exports = {
         loader: 'vue-loader',
         options: vueLoaderConfig,
       },
+
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
@@ -43,6 +44,7 @@ module.exports = {
           appendTsSuffixTo: [/\.vue$/],
         },
       },
+
       {
         test: /\.js$/,
         loader: 'babel-loader',

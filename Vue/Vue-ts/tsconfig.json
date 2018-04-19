@@ -4,15 +4,19 @@
   "exclude": ["node_modules"],
 
   "compilerOptions": {
+    // 允许从没有设置默认导出的模块中默认导入
     "allowSyntheticDefaultImports": true,
+    // 启用装饰器
     "experimentalDecorators": true,
     "allowJs": true,
     "module": "esnext",
     "target": "es5",
     "moduleResolution": "node",
     "isolatedModules": true,
-    "lib": ["dom", "es5", "es2015.promise"],
+    "lib": ["dom", "es5", "es6", "es7", "es2015.promise"],
     "sourceMap": true,
-    "pretty": true
+    "pretty": true,
+    "strictFunctionTypes": false,
+    "importHelpers": true
   }
 }
