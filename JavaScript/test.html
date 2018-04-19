@@ -6,20 +6,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .flexs {
+      width: 500px;
+      height: 300px;
+      display: flex;
+
+    }
+
+    .flexs div {
+      width: 100px;
+      height: 300px;
+      background-color: bisque;
+      border: 1px solid #000;
+    }
+  </style>
 </head>
 
 <body>
   <div class='box'>111111111111111111111111</div>
   <div class="a">aqaaa</div>
+  <input type="text" value='' id='val'>
+  <div class="flexs" id="dom">
+    <div>11111</div>
+    <div>22222</div>
+    <div>333333</div>
+  </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
-  var a = 1
-  var a = 2
-  var a = 3
-  if (a == 1 && a == 2 && a == 3) {
-    console.log(1)
+
+/* var obj = {
+    a: 1,
+    b: function () {
+      console.log(1)
+    }
   }
+  for (let tag of Object.keys(obj)) {
+    console.log(tag)
+  } */
+ /*  function func(n, x) {
+    console.log(x);
+    return {
+      func: function (m) {
+        return func(m, n)
+      }
+    }
+  }
+  var a = func(0)
+  a.func(1)
+  a.func(2)
+  a.func(3)
+  var b = func(0).func(1).func(2).func(3)
+  var c = func(0).func(1)
+  c.func(2)
+  c.func(3) */
+/*   function debounce(fn, delay) {
+
+    let timer = null;
+
+    return function () {
+
+      let context = this;
+      let args = arguments;
+
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        fn.apply(context, args);
+      }, delay);
+    }
+  }
+  function on(el, type, fn, option) {
+    option = option || false
+    el.addEventListener(type, fn, option)
+  }
+  let dom = document.getElementById('dom')
+  on(dom, 'click', function (e) {
+    console.log(e.target.innerHTML)
+  }) */
+ /*  function fn(num) {
+    num = num || 0
+    return function () {
+      return num++
+
+    }
+  }
+  let fun = fn(0)
+  console.log(fun())
+  console.log(fun()) */
+/*   let arr = [1, 2, 3, [11, 2], [1, [2]]]
+  let arr2 = []
+  function deepclone(arr, arr1) {
+    let result = arr1 || []
+    for (let [index, item] of arr.entries()) {
+      if (item && typeof item === 'object') {
+        result[index] = item
+        deepclone(item)
+      }
+      else {
+        result[index] = item
+      }
+    }
+    return result
+  }
+  let arr1 = deepclone(arr, [])
+  arr1.push(111)
+  console.log(arr1, arr) */
+ /*  let dom = document.getElementById('dom')
+
+  dom.onclick = function (e) {
+    let box = document.createElement('div')
+    box.innerHTML = 'tessssss'
+    dom.appendChild(box)
+    console.log(e.target)
+  } */
+ /*  let inputT = document.getElementById('val')
+  let time = 0
+  inputT.addEventListener('input', function (e) {
+    clearTimeout(time)
+    time = setTimeout(() => {
+      console.log(e)
+    }, 3000);
+  }) */
   //$('.a')[0].addClass('b');
   //$('.a').eq(0).addClass('b');
   //$('.a:first').addClass('b');

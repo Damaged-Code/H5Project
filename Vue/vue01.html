@@ -15,54 +15,37 @@
 </head>
 
 <body>
-  <canvas id="app"></canvas>
+  <div id="app">{{title}}
+    <button @click='setData'>setData</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <script>
 
-    let canvas = document.getElementById('app');
-    let ctx = canvas.getContext('2d');
-    let data = [{
-      size: 0.4,
-      color: 'red'
-    }, {
-      size: 0.4,
-      color: 'black'
-    },
-    {
-      size: 0.4,
-      color: 'yellow'
-    }, {
-      size: 0.2,
-      color: 'green'
-    }, {
-      size: 0.2,
-      color: 'blue'
-    },
-    {
-      size: 0.4,
-      color: 'aquamarine'
-    }];
-
-
-
-    function area(options) {
-      let start = 0
-      let end = 0
-      //console.log(1);
-      for (let item of options) {
-        // console.log(item);
-        ctx.beginPath();
-        ctx.moveTo(100, 100)
-        end += item.size
-        ctx.arc(100, 100, 50, start, (end) * Math.PI, false);
-        ctx.fillStyle = item.color
-        ctx.lineTo(100, 100)
-        ctx.fill()
-        ctx.closePath();
-        start += item.size
-        console.log(start);
+    new Vue({
+      el: '#app',
+      data: {
+        title: 0
+      },
+      mounted: function () {
+        this.title = store.state.count
+      },
+      methods: {
+        setData: function () {
+          // this.title = 'ddd'
+          store.commit('increment')
+        }
       }
-    }
-    area(data)
+    })
+    const store = new Vuex.Store({
+      state: {
+        count: 0
+      },
+      mutations: {
+        increment(state) {
+          state.count++
+        }
+      }
+    })
   </script>
 </body>
 
