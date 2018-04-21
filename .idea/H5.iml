@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module type="JAVA_MODULE" version="4">
+<module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <excludeFolder url="file://$MODULE_DIR$/MaiTian/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/api" />
-      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/api/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/NeteaseCloudMusic/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/React/element/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/React/my-app/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/React/react-router-demo/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/React/redux-dome/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/YoHo" />
-      <excludeFolder url="file://$MODULE_DIR$/YoHo/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/haidilao/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/haidilao/test" />
-      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/dist" />
-      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/node_modules" />
-      <excludeFolder url="file://$MODULE_DIR$/heroesEditor/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/temp" />
+      <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>
-    <content url="file://$MODULE_DIR$/haidilao/node_modules" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
