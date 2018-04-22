@@ -1,6 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addMsg } from '../actions/actions';
+/* 
+提交数据
+*/
 
 let AddMsg = ({ dispatch }) => {
   let input;
@@ -14,6 +17,9 @@ let AddMsg = ({ dispatch }) => {
             return;
           }
           dispatch(addMsg(input.value));
+          {
+            /* 触发增加数据的方法，提交数据 */
+          }
           input.value = '';
         }}
       >

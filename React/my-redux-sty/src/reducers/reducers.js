@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import { ADD_MSG, DEL_MSG } from '../actions/actions';
-
+/* 
+处理业务逻辑
+*/
 const initState = [{ text: 'my msg' }];
 function MyMSG(state = initState, action) {
   switch (action.type) {

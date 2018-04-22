@@ -6,6 +6,10 @@ import { Provider } from 'react-redux';
 import store from './store';
 import registerServiceWorker from './registerServiceWorker';
 
+/* 
+根组件注册
+*/
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

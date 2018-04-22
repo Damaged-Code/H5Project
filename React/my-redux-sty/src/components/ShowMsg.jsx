@@ -5,6 +5,7 @@ import { delMsg } from '../actions/actions';
 class ShowMsg extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
   DelTest = e => {
     let tag = e.target,

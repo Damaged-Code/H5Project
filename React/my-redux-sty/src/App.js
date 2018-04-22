@@ -6,6 +6,7 @@ import AddMsg from './containers/AddMsg';
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {};
   }
 
   render() {
