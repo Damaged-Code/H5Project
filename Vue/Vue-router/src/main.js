@@ -7,7 +7,7 @@ import router from './router';
 Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {
   console.log(to.path, from.path);
-  next();
+  next(console.log(0));
 });
 
 /* eslint-disable no-new */
