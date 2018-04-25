@@ -31,10 +31,47 @@
     <div>22222</div>
     <div>333333</div>
   </div>
-  <input type="submit" style="height: 100px;" value="asdasd">
+
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
+  function fn(n, o) {
+    console.log(o)
+    return {
+      fn: function (m) {
+        return fn(m, n)
+      }
+    }
+  }
+  var b = fn(1).fn(2).fn(4).fn(8)
+  console.log(b)
+ /*  var obj = {
+    c: 1,
+    getc: function () {
+      return this.c
+    }
+  }
+  var fn = obj.getc
+  fn1 = obj.getc()
+  console.log(fn(), fn1) */
+ /*  let memoize = function (f) {
+    var cache = {}
+
+    return function () {
+      var arg_str = JSON.stringify(arguments)
+      console.log(arguments, arg_str)
+      cache[arg_str] = cache[arg_str] || f.apply(f, arguments)
+      console.log(cache)
+      return cache[arg_str]
+    }
+  }
+  var test = memoize(function (x) {
+    return x * x
+  })
+  test(4)
+  test(4)
+  test(5)
+  test(5) */
  /*  $.get('https://easy-mock.com/mock/5ad7dd7dbe43d47309afdae7/example/mock', function (res) {
     console.log(res)
   }) */

@@ -11,6 +11,7 @@ import { LogoWrapComponent } from './pages-index/logo-wrap/logo-wrap.component';
 import { DownBannerComponent } from './pages-index/down-banner/down-banner.component';
 import { HomeSectionFComponent } from './pages-index/home-section-f/home-section-f.component';
 import { HomeSectionSComponent } from './pages-index/home-section-s/home-section-s.component';
+import { WalletService } from './wallet.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { HomeSectionSComponent } from './pages-index/home-section-s/home-section
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [WalletService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
