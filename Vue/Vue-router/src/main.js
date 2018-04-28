@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import './assets/icon/iconfont.css';
 
 Vue.config.productionTip = false;
 router.beforeEach((to, from, next) => {

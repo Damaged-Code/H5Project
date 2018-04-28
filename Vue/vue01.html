@@ -6,46 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Title</title>
   <style>
-    #app {
-      width: 800px;
-      height: 400px;
-
-    }
   </style>
 </head>
 
 <body>
-  <div id="app">{{title}}
-    <button @click='setData'>setData</button>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <script>
 
-    new Vue({
-      el: '#app',
-      data: {
-        title: 0
+  <script>
+    var obj = {
+      a: 1,
+      b: '111',
+      c: function () {
+        console.log(1);
       },
-      mounted: function () {
-        this.title = store.state.count
-      },
-      methods: {
-        setData: function () {
-          // this.title = 'ddd'
-          store.commit('increment')
+      reg: /123/,
+      arr: [1, 2, 3]
+    };
+    let ob = {}
+    function fn(obj) {
+
+      for (let item of Object.keys(obj)) {
+        if (typeof item == 'object') {
+          fn(item)
         }
+        ob[item] = obj[item]
       }
-    })
-    const store = new Vuex.Store({
-      state: {
-        count: 0
-      },
-      mutations: {
-        increment(state) {
-          state.count++
-        }
-      }
-    })
+    }
+    fn(obj)
+    ob.a = 2
+    ob.c = function () {
+      console.log(22)
+    }
+    ob.arr.push(99)
+    console.log(obj, ob)
+    ob.c()
+    obj.c()
   </script>
 </body>
 

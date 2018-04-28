@@ -1,14 +1,15 @@
 <template>
   <div id="app">
-    
+
     <router-view/>
   </div>
 </template>
 
-<script>
+<script lang='ts'>
+import Vue, { ComponentOptions } from 'vue';
 export default {
   name: 'App',
-};
+} as ComponentOptions<Vue>;
 </script>
 
 <style>
