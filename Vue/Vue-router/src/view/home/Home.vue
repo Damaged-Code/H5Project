@@ -2,6 +2,11 @@
   <div>
     It is HomeView
     <router-link to="/TitleContent">TitleContent</router-link>
+    <img :src="imgSrc" alt="" >
+    <img src="../../assets/logo.png" alt="">
+    <span v-show='show'>{{show?'123':'sadas'}}</span>
+    <button @click='show = !show'>click</button>
+    <input :type="show ?'password':'text'" placeholder="xxxxx">
     <main id='main' style="width: 600px;height:400px;">
     </main>
   </div>
@@ -11,7 +16,10 @@
 import echarts from 'echarts';
 export default {
   data() {
-    return {};
+    return {
+      imgSrc: require('../../assets/logo.png'),
+      show: false,
+    };
   },
   mounted() {
     let myChart = echarts.init(document.getElementById('main'));
@@ -64,7 +72,6 @@ export default {
       ],
     };
     myChart.setOption(option);
-    
   },
 };
 </script>
