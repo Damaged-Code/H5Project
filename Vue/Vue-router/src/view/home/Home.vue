@@ -6,6 +6,7 @@
     <img src="../../assets/logo.png" alt="">
     <span v-show='show'>{{show?'123':'sadas'}}</span>
     <button @click='show = !show'>click</button>
+    <button @click="myWatch">watch</button>
     <input :type="show ?'password':'text'" placeholder="xxxxx">
     <main id='main' style="width: 600px;height:400px;">
     </main>
@@ -19,7 +20,13 @@ export default {
     return {
       imgSrc: require('../../assets/logo.png'),
       show: false,
+      toWatch: '1',
     };
+  },
+  watch: {
+    toWatch() {
+      console.log('watch mymethods');
+    },
   },
   mounted() {
     let myChart = echarts.init(document.getElementById('main'));
@@ -72,6 +79,12 @@ export default {
       ],
     };
     myChart.setOption(option);
+  },
+  methods: {
+    myWatch() {
+      this.toWatch = 2;
+      console.log('mywatch');
+    },
   },
 };
 </script>
