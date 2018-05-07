@@ -1,7 +1,7 @@
 <template>
   <div>
     It is HomeView
-    <router-link to="/TitleContent">TitleContent</router-link>
+    <router-link to="/;sokc=sada/TitleContent">TitleContent</router-link>
     <img :src="imgSrc" alt="" >
     <img src="../../assets/logo.png" alt="">
     <span v-show='show'>{{show?'123':'sadas'}}</span>

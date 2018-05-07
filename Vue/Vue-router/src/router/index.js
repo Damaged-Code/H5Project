@@ -12,7 +12,7 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/TitleContent',
+      path: '/:aid/TitleContent',
       name: 'TitleContent',
       component: () => import('../view/TitleContent/TitleContent'),
     },
