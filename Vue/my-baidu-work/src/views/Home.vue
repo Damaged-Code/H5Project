@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class='main'>
     <div is='Graph'></div>
   </div>
 </template>
@@ -21,5 +21,8 @@ export default {
 </script>
 
 <style scoped>
-
+.main{
+  width: 100%;
+  height: 100%;
+}
 </style>
