@@ -2,40 +2,44 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    .flexs {
-      width: 500px;
-      height: 300px;
-      display: flex;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .flexs {
+            width: 500px;
+            height: 300px;
+            display: flex;
+        }
 
-    .flexs div {
-      width: 100px;
-      height: 300px;
-      background-color: bisque;
-      border: 1px solid #000;
-    }
-  </style>
+        .flexs div {
+            width: 100px;
+            height: 300px;
+            background-color: bisque;
+            border: 1px solid #000;
+        }
+    </style>
 </head>
 
 <body>
-  <div class='box'>111111111111111111111111</div>
-  <div class="a">aqaaa</div>
-  <input type="text" value='' id='val'>
-  <div class="flexs" id="dom">
-    <div>11111</div>
-    <div>22222</div>
-    <div>333333</div>
-  </div>
+    <div class='box'>111111111111111111111111</div>
+    <div class="a">aqaaa</div>
+    <input type="text" value='' id='val'>
+    <div class="flexs" id="dom">
+        <div>11111</div>
+        <div>22222</div>
+        <div>333333</div>
+        <input type="text" id='inputTrig' value='11111' onclick="this.focus()">
+    </div>
 
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
-  function fn(n, o) {
+    var e = document.createEvent("MouseEvents");
+    e.initEvent("click", true, true);
+    document.getElementById("inputTrig").dispatchEvent(e);
+  /* function fn(n, o) {
     console.log(o)
     return {
       fn: function (m) {
@@ -44,7 +48,7 @@
     }
   }
   var b = fn(1).fn(2).fn(4).fn(8)
-  console.log(b)
+  console.log(b) */
  /*  var obj = {
     c: 1,
     getc: function () {
