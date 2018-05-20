@@ -36,9 +36,16 @@
 </body>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    var e = document.createEvent("MouseEvents");
-    e.initEvent("click", true, true);
-    document.getElementById("inputTrig").dispatchEvent(e);
+    let x = 1, y = z = 0
+    function t1(n) {
+        return n = n + 1
+    }
+    y = t1(x)
+    function t2(n) {
+        return n = n + 2
+    }
+    z = t2(x)
+    console.log(x, y, z);
   /* function fn(n, o) {
     console.log(o)
     return {

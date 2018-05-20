@@ -1,0 +1,35 @@
+{
+    "scope": "/",
+    "name": "SanJin",
+    "short_name": "SanJin",
+    "start_url": "/JavaScript/ServiceWorker.html",
+    "display": "standalone",
+    "description": "每天知道多一点.",
+    "dir": "rtl",
+    "lang": "cn",
+    "orientation": "portrait",
+    "theme_color": "#3f51b5",
+    "background_color": "#fff",
+    "icons": [
+        {
+            "src": "./logo.png",
+            "sizes": "200x200",
+            "type": "image/png"
+        }
+    ],
+    "prefer_related_applications": false,
+    "related_applications": [
+        {
+            "platform": "web"
+        },
+        {
+            "platform": "play",
+            "url":
+                "https://play.google.com/store/apps/details?id=com.lzwme.demo"
+        },
+        {
+            "platform": "itunes",
+            "url": "https://itunes.apple.com/app/com-lzw-me-demo/id500000000"
+        }
+    ]
+}
